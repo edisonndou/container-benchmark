@@ -1,0 +1,10 @@
+round,variant,startup_ms,ok
+1,debian,785,1
+1,distroless,852,1
+1,alpine,811,1
+2,alpine,800,1
+2,distroless,807,1
+2,debian,765,1
+3,alpine,780,1
+3,distroless,825,1
+3,debian,757,1

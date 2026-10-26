@@ -1,0 +1,222 @@
+[
+    {
+        "Id": "d6baa9f0e5bf75fe785cde16ecb4e2422db248e307c1606d47da3f5613c7ab6a",
+        "Created": "2026-10-26T22:43:50.28736697Z",
+        "Path": "/nodejs/bin/node",
+        "Args": [
+            "server.js"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 13251,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-10-26T22:43:50.376780769Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:37b2b21856c8525c62643578c895ff64dcab2e50a97a8bb7f4a5897aedba19de",
+        "ResolvConfPath": "/var/lib/docker/containers/d6baa9f0e5bf75fe785cde16ecb4e2422db248e307c1606d47da3f5613c7ab6a/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/d6baa9f0e5bf75fe785cde16ecb4e2422db248e307c1606d47da3f5613c7ab6a/hostname",
+        "HostsPath": "/var/lib/docker/containers/d6baa9f0e5bf75fe785cde16ecb4e2422db248e307c1606d47da3f5613c7ab6a/hosts",
+        "LogPath": "/var/lib/docker/containers/d6baa9f0e5bf75fe785cde16ecb4e2422db248e307c1606d47da3f5613c7ab6a/d6baa9f0e5bf75fe785cde16ecb4e2422db248e307c1606d47da3f5613c7ab6a-json.log",
+        "Name": "/app",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "benchnet",
+            "PortBindings": {
+                "3000/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "8080"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 268435456,
+            "NanoCpus": 1000000000,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 536870912,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "d6baa9f0e5bf",
+            "Domainname": "",
+            "User": "nonroot",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "3000/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt",
+                "NODE_ENV=production",
+                "APP_MODE=bench",
+                "PORT=3000"
+            ],
+            "Cmd": [
+                "server.js"
+            ],
+            "Image": "bench-distroless:latest",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": [
+                "/nodejs/bin/node"
+            ],
+            "Labels": {}
+        },
+        "NetworkSettings": {
+            "SandboxID": "622d70ba854c5b6cdcbd0cea74a558c9d5b9a22254201b3f57d3107d74facd11",
+            "SandboxKey": "/var/run/docker/netns/622d70ba854c",
+            "Ports": {
+                "3000/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "8080"
+                    },
+                    {
+                        "HostIp": "::",
+                        "HostPort": "8080"
+                    }
+                ]
+            },
+            "Networks": {
+                "benchnet": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "4633f27094b6f8402ce894bdf1d5491606eaf0352eb79ee600a21059e0e27947",
+                    "EndpointID": "5adf1afcbec6353ca54dcb593653ec156e99c41834ab90c73be7ae6aa144c6c0",
+                    "Gateway": "172.18.0.1",
+                    "IPAddress": "172.18.0.3",
+                    "MacAddress": "ea:9d:3e:e7:a0:81",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "app",
+                        "d6baa9f0e5bf"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:f46b558a96183a9befcce5450b9cf6597ed611d7fcbb51e3d4f09b866f86c9ea",
+            "size": 4649,
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]

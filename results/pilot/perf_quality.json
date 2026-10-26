@@ -1,0 +1,23 @@
+{
+  "counts": {
+    "debian": {
+      "startup_attempts": 3,
+      "startup_failed": 0,
+      "load_attempts": 3,
+      "load_reports": 3
+    },
+    "alpine": {
+      "startup_attempts": 3,
+      "startup_failed": 0,
+      "load_attempts": 3,
+      "load_reports": 3
+    },
+    "distroless": {
+      "startup_attempts": 3,
+      "startup_failed": 0,
+      "load_attempts": 3,
+      "load_reports": 3
+    }
+  },
+  "issues": []
+}

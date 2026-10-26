@@ -29,11 +29,44 @@ run_app() {
     --cpus="$CPUS" --memory="$MEMORY" "$@" "$(img "$v")" >/dev/null
 }
 
-wait_ready() {  # prints nothing; returns 0 when /healthz answers 200, 1 on 30 s timeout
-  local deadline=$(( $(date +%s%N) + 30000000000 ))
-  until curl -sf --max-time 0.5 -o /dev/null "http://localhost:${HOST_PORT}/healthz"; do
-    [ "$(date +%s%N)" -gt "$deadline" ] && return 1
-    sleep 0.01
-  done
+wait_ready() {
+  python3 - "$HOST_PORT" <<'PY'
+import json
+import sys
+import time
+import urllib.error
+import urllib.request
+
+url = f"http://127.0.0.1:{int(sys.argv[1])}/healthz"
+
+class NoRedirect(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        return None
+
+opener = urllib.request.build_opener(
+    urllib.request.ProxyHandler({}), NoRedirect()
+)
+deadline = time.monotonic() + 30
+
+while True:
+    remaining = deadline - time.monotonic()
+    if remaining <= 0:
+        sys.exit(1)
+
+    try:
+        with opener.open(url, timeout=min(0.5, remaining)) as response:
+            payload = json.loads(response.read(65536))
+            if (
+                response.status == 200
+                and isinstance(payload, dict)
+                and payload.get("status") == "ok"
+            ):
+                sys.exit(0)
+    except (OSError, ValueError, urllib.error.URLError):
+        pass
+
+    time.sleep(0.01)
+PY
 }
+
 cleanup_app() { docker rm -f "$1" >/dev/null 2>&1 || true; }

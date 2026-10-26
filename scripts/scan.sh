@@ -1,19 +1,59 @@
 #!/usr/bin/env bash
-# Phase 4/6: SBOM (Syft) + vulnerabilities (Trivy) for each variant, using ONE frozen Trivy DB.
-# Install: https://github.com/anchore/syft  and  https://trivy.dev/docs/latest/getting-started/installation/
+# Scan every variant against the same dedicated Trivy database.
 source "$(dirname "$0")/common.sh"
-mkdir -p "$RESULTS/sbom" "$RESULTS/trivy"
-command -v syft >/dev/null && command -v trivy >/dev/null || { echo "install syft and trivy first"; exit 1; }
 
-# Download the DB once; later runs reuse it so every image is scanned against the same snapshot.
-if [ ! -f "$RESULTS/trivy/DB_FROZEN" ]; then
-  trivy image --download-db-only
+CACHE="$ROOT/.cache/trivy"
+MANIFEST="$RESULTS/trivy/DB_SHA256SUMS"
+
+mkdir -p "$CACHE" "$RESULTS/sbom" "$RESULTS/trivy"
+
+for tool in syft trivy sha256sum; do
+  command -v "$tool" >/dev/null || {
+    echo "Missing required tool: $tool" >&2
+    exit 1
+  }
+done
+
+# Initialize the snapshot only once.
+if [ ! -f "$MANIFEST" ]; then
+  trivy --cache-dir "$CACHE" image --download-db-only
+
+  (
+    cd "$CACHE/db"
+    sha256sum trivy.db metadata.json
+  ) > "$MANIFEST"
+
+  cp "$CACHE/db/metadata.json" "$RESULTS/trivy/db_metadata.json"
   date -u +%FT%TZ > "$RESULTS/trivy/DB_FROZEN"
 fi
-{ syft version; trivy version --format json; } > "$RESULTS/tool_versions.txt" 2>&1
+
+check_db() {
+  (
+    cd "$CACHE/db"
+    sha256sum --check "$MANIFEST"
+  )
+}
+
+check_db
+
+{
+  syft version
+  trivy --version
+} > "$RESULTS/tool_versions.txt" 2>&1
 
 for v in "${VARIANTS[@]}"; do
+  check_db
+
   syft "$(img "$v")" -o json > "$RESULTS/sbom/$v.syft.json"
-  trivy image --skip-db-update --scanners vuln --format json --output "$RESULTS/trivy/$v.json" "$(img "$v")"
+
+  trivy --cache-dir "$CACHE" image \
+    --skip-db-update \
+    --scanners vuln \
+    --format json \
+    --output "$RESULTS/trivy/$v.json" \
+    "$(img "$v")"
+
+  check_db
 done
+
 python3 "$ROOT/scripts/analyze_scan.py"

@@ -1,0 +1,134 @@
+{
+  "identity_fields": [
+    "VulnerabilityID",
+    "PkgName",
+    "InstalledVersion"
+  ],
+  "baseline": "debian",
+  "project_scope": "/app/node_modules/",
+  "findings": {
+    "debian": [
+      [
+        "CVE-2025-15284",
+        "qs",
+        "6.13.0"
+      ],
+      [
+        "CVE-2026-111181",
+        "body-parser",
+        "1.20.3"
+      ],
+      [
+        "CVE-2026-12590",
+        "body-parser",
+        "1.20.3"
+      ],
+      [
+        "CVE-2026-2391",
+        "qs",
+        "6.13.0"
+      ],
+      [
+        "CVE-2026-4867",
+        "path-to-regexp",
+        "0.1.12"
+      ],
+      [
+        "CVE-2026-82417",
+        "qs",
+        "6.13.0"
+      ],
+      [
+        "CVE-2026-8723",
+        "qs",
+        "6.13.0"
+      ]
+    ],
+    "alpine": [
+      [
+        "CVE-2025-15284",
+        "qs",
+        "6.13.0"
+      ],
+      [
+        "CVE-2026-111181",
+        "body-parser",
+        "1.20.3"
+      ],
+      [
+        "CVE-2026-12590",
+        "body-parser",
+        "1.20.3"
+      ],
+      [
+        "CVE-2026-2391",
+        "qs",
+        "6.13.0"
+      ],
+      [
+        "CVE-2026-4867",
+        "path-to-regexp",
+        "0.1.12"
+      ],
+      [
+        "CVE-2026-82417",
+        "qs",
+        "6.13.0"
+      ],
+      [
+        "CVE-2026-8723",
+        "qs",
+        "6.13.0"
+      ]
+    ],
+    "distroless": [
+      [
+        "CVE-2025-15284",
+        "qs",
+        "6.13.0"
+      ],
+      [
+        "CVE-2026-111181",
+        "body-parser",
+        "1.20.3"
+      ],
+      [
+        "CVE-2026-12590",
+        "body-parser",
+        "1.20.3"
+      ],
+      [
+        "CVE-2026-2391",
+        "qs",
+        "6.13.0"
+      ],
+      [
+        "CVE-2026-4867",
+        "path-to-regexp",
+        "0.1.12"
+      ],
+      [
+        "CVE-2026-82417",
+        "qs",
+        "6.13.0"
+      ],
+      [
+        "CVE-2026-8723",
+        "qs",
+        "6.13.0"
+      ]
+    ]
+  },
+  "comparisons": {
+    "alpine": {
+      "matches_debian": true,
+      "missing": [],
+      "extra": []
+    },
+    "distroless": {
+      "matches_debian": true,
+      "missing": [],
+      "extra": []
+    }
+  }
+}

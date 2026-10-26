@@ -10,7 +10,7 @@ for v in "${ALL_VARIANTS[@]}"; do
   docker rm "$cid" >/dev/null
   row="$v,$(echo "$list" | wc -l)"
   for t in "${TOOLS[@]}"; do
-    if echo "$list" | grep -Eq "(^|/)(usr/)?(s?bin|local/bin)/$t$"; then row+=",yes"; else row+=",no"; fi
+    if grep -Eq "(^|/)(s?bin|busybox)/$t$" <<< "$list"; then row+=",yes"; else row+=",no"; fi
   done
   echo "$row" >> "$OUT"
 done

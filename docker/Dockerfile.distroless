@@ -1,0 +1,19 @@
+# Variant 3: Distroless (no shell, no package manager). Build stage is Debian Slim
+# so that dependencies are installed against glibc, matching the distroless/debian12 runtime.
+# NOTE: the distroless Node.js version is chosen by the image tag, not by NODE_VERSION;
+# record the real version printed by the app at startup (see scripts/build.sh).
+ARG NODE_VERSION=22.22.0
+FROM node:${NODE_VERSION}-bookworm-slim AS deps
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm ci --omit=dev && npm cache clean --force
+
+FROM gcr.io/distroless/nodejs22-debian12:nonroot
+ENV NODE_ENV=production APP_MODE=bench PORT=3000
+WORKDIR /app
+COPY --from=deps --chown=nonroot:nonroot /app/node_modules ./node_modules
+COPY --chown=nonroot:nonroot package.json server.js ./
+COPY --chown=nonroot:nonroot test-data/sample.txt /data/sample.txt
+USER nonroot
+EXPOSE 3000
+CMD ["server.js"]

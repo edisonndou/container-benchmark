@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Lists which tools exist inside each image by exporting its filesystem (works even without a shell).
+source "$(dirname "$0")/common.sh"
+OUT="$RESULTS/tools_present.csv"
+TOOLS=(sh bash apt apt-get apk dpkg curl wget ps ls cat busybox)
+{ echo -n "variant,files_total"; for t in "${TOOLS[@]}"; do echo -n ",$t"; done; echo; } > "$OUT"
+for v in "${ALL_VARIANTS[@]}"; do
+  cid=$(docker create "$(img "$v")")
+  list=$(docker export "$cid" | tar -t 2>/dev/null)
+  docker rm "$cid" >/dev/null
+  row="$v,$(echo "$list" | wc -l)"
+  for t in "${TOOLS[@]}"; do
+    if echo "$list" | grep -Eq "(^|/)(usr/)?(s?bin|local/bin)/$t$"; then row+=",yes"; else row+=",no"; fi
+  done
+  echo "$row" >> "$OUT"
+done
+cat "$OUT"

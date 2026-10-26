@@ -1,0 +1,10 @@
+scenario,variant,operator,order_in_session,success,time_seconds,steps,commands_or_tools_used,external_help_needed(host_tool|helper_container|debug_image|none),notes
+config,debian,,,,,,,,
+config,alpine,,,,,,,,
+config,distroless,,,,,,,,
+permissions,debian,,,,,,,,
+permissions,alpine,,,,,,,,
+permissions,distroless,,,,,,,,
+connectivity,debian,,,,,,,,
+connectivity,alpine,,,,,,,,
+connectivity,distroless,,,,,,,,

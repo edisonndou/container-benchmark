@@ -1,0 +1,6 @@
+PASS /healthz (200)
+PASS /data (200)
+PASS /compute?seed=abc (200)
+FAIL /file (500)
+PASS /upstream (200)
+RESULT: FAIL (1)

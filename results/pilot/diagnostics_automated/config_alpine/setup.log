@@ -1,0 +1,2 @@
+Fault prepared. Container name: app, published at http://localhost:8080
+Fix criterion: node app/test.js http://localhost:8080 prints RESULT: PASS

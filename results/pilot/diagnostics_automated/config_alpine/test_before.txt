@@ -1,0 +1,6 @@
+FAIL /healthz fetch failed
+FAIL /data fetch failed
+FAIL /compute?seed=abc fetch failed
+FAIL /file fetch failed
+FAIL /upstream fetch failed
+RESULT: FAIL (5)

@@ -1,0 +1,1 @@
+{"level":"fatal","msg":"missing required environment variable","vars":["APP_MODE"]}

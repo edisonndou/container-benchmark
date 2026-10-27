@@ -1,0 +1,7 @@
+scenario,variant,result,phase
+config,alpine,PASS,done
+permissions,alpine,PASS,done
+connectivity,alpine,PASS,done
+config,distroless,PASS,done
+permissions,distroless,PASS,done
+connectivity,distroless,PASS,done

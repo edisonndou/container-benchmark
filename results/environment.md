@@ -1,5 +1,5 @@
 # Measurement environment
-Recorded (UTC): 2026-10-26T22:41:49Z
+Recorded (UTC): 2026-10-27T09:10:20Z
 Recorded by: lenovo_edison
 
 ## Host
@@ -16,13 +16,13 @@ Core(s) per socket:                      6
 Socket(s):                               1
 
                total        used        free      shared  buff/cache   available
-Mem:           6.7Gi       935Mi       2.8Gi       4.3Mi       3.2Gi       5.8Gi
+Mem:           6.7Gi       909Mi       2.6Gi       4.3Mi       3.4Gi       5.8Gi
 Swap:          2.0Gi          0B       2.0Gi
 
 CPU governor: n/a (VM or no cpufreq)
 Virtualization: wsl
-On AC power: 0
-Load average at record time: 1.22 0.54 0.25
+On AC power: 1
+Load average at record time: 1.34 0.48 0.19
 ```
 
 ## Tools

@@ -1,0 +1,2 @@
+{"level":"info","msg":"listening","port":3000,"node":"v22.22.0","platform":"linux","arch":"x64"}
+{"level":"error","msg":"cannot read test file","file":"/data/sample.txt","code":"EACCES"}

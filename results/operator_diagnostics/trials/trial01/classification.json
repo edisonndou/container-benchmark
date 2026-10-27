@@ -1,0 +1,9 @@
+{
+  "actual_operator": "Edison",
+  "classification": "assisted_orientation",
+  "scenario": "config",
+  "variant": "distroless",
+  "recovery_verified": true,
+  "diagnosis_time_seconds": null,
+  "included_in_timed_comparison": false
+}

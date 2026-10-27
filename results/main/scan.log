@@ -1,0 +1,39 @@
+trivy.db: OK
+metadata.json: OK
+trivy.db: OK
+metadata.json: OK
+2026-10-27T10:09:45+01:00	INFO	[vuln] Vulnerability scanning is enabled
+2026-10-27T10:09:45+01:00	INFO	Detected OS	family="debian" version="12.13"
+2026-10-27T10:09:45+01:00	INFO	[debian] Detecting vulnerabilities...	os_version="12" pkg_num=88
+2026-10-27T10:09:45+01:00	INFO	Number of language-specific files	num=1
+2026-10-27T10:09:45+01:00	INFO	[node-pkg] Detecting vulnerabilities...
+2026-10-27T10:09:45+01:00	WARN	Using severities from other vendors for some vulnerabilities. Read https://trivy.dev/docs/v0.76/guide/scanner/vulnerability#severity-selection for details.
+trivy.db: OK
+metadata.json: OK
+trivy.db: OK
+metadata.json: OK
+2026-10-27T10:10:00+01:00	INFO	[vuln] Vulnerability scanning is enabled
+2026-10-27T10:10:00+01:00	INFO	Detected OS	family="alpine" version="3.23.3"
+2026-10-27T10:10:00+01:00	INFO	[alpine] Detecting vulnerabilities...	os_version="3.23" repository="3.23" pkg_num=18
+2026-10-27T10:10:00+01:00	INFO	Number of language-specific files	num=1
+2026-10-27T10:10:00+01:00	INFO	[node-pkg] Detecting vulnerabilities...
+2026-10-27T10:10:00+01:00	WARN	Using severities from other vendors for some vulnerabilities. Read https://trivy.dev/docs/v0.76/guide/scanner/vulnerability#severity-selection for details.
+trivy.db: OK
+metadata.json: OK
+trivy.db: OK
+metadata.json: OK
+2026-10-27T10:10:14+01:00	INFO	[vuln] Vulnerability scanning is enabled
+2026-10-27T10:10:14+01:00	INFO	Detected OS	family="debian" version="12.13"
+2026-10-27T10:10:14+01:00	INFO	[debian] Detecting vulnerabilities...	os_version="12" pkg_num=10
+2026-10-27T10:10:14+01:00	INFO	Number of language-specific files	num=1
+2026-10-27T10:10:14+01:00	INFO	[node-pkg] Detecting vulnerabilities...
+2026-10-27T10:10:14+01:00	WARN	Using severities from other vendors for some vulnerabilities. Read https://trivy.dev/docs/v0.76/guide/scanner/vulnerability#severity-selection for details.
+trivy.db: OK
+metadata.json: OK
+variant,components_total,components_os,components_npm,vulns_unique_total,os_total,os_critical,os_high,os_medium,os_low,os_unknown,project_total,project_critical,project_high,project_medium,project_low,project_unknown,other_lang_total,other_lang_critical,other_lang_high,other_lang_medium,other_lang_low,other_lang_unknown,unknown_lang_total,unknown_lang_critical,unknown_lang_high,unknown_lang_medium,unknown_lang_low,unknown_lang_unknown
+debian,372,88,283,348,290,6,68,120,90,6,7,0,2,3,2,0,51,2,31,16,2,0,0,0,0,0,0,0
+alpine,302,18,283,131,73,2,15,22,32,2,7,0,2,3,2,0,51,2,31,16,2,0,0,0,0,0,0,0
+distroless,81,10,70,78,71,1,6,35,27,2,7,0,2,3,2,0,0,0,0,0,0,0,0,0,0,0,0,0
+
+alpine: matches_debian=True, missing=0, extra=0
+distroless: matches_debian=True, missing=0, extra=0

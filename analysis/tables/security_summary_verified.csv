@@ -1,0 +1,4 @@
+variant,components_total,components_os,components_npm,project_unique_name_versions,vulns_unique_total,os_total,os_critical,os_high,os_medium,os_low,os_unknown,project_total,project_critical,project_high,project_medium,project_low,project_unknown,other_lang_total,other_lang_critical,other_lang_high,other_lang_medium,other_lang_low,other_lang_unknown,unknown_lang_total,unknown_lang_critical,unknown_lang_high,unknown_lang_medium,unknown_lang_low,unknown_lang_unknown,docker_reported_size_bytes,docker_reported_size_MB,syft_reported_imageSize_bytes
+debian,372,88,283,69,348,290,6,68,120,90,6,7,0,2,3,2,0,51,2,31,16,2,0,0,0,0,0,0,0,331684087,331.684087,228921556
+alpine,302,18,283,69,131,73,2,15,22,32,2,7,0,2,3,2,0,51,2,31,16,2,0,0,0,0,0,0,0,234609317,234.609317,164406203
+distroless,81,10,70,69,78,71,1,6,35,27,2,7,0,2,3,2,0,0,0,0,0,0,0,0,0,0,0,0,0,209329755,209.329755,149424298

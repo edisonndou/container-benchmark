@@ -1,0 +1,14 @@
+Script started on 2026-10-27 11:24:03+01:00 [COMMAND="env HISTFILE=/dev/null bash --noprofile --norc -i" TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="30"]
+[?2004hbash-5.3$ [7mAplikacioni është në kontejnerin app, në portin 8080. Identifiko shkakun dhe korrigjoje duke ruajtur konfiguri[27m[7mm[27m[7min e eksperimentit. Shpjego shkakun konkret dhe verifiko rezultatin me testin e plotë.[27m[A[C[C[C[C[C[C[C[C[C[CAplikacioni është në kontejnerin app, në portin 8080. Identifiko shkakun dhe korrigjoje duke ruajtur konfigurimin e eksperimentit. Shpjego shkakun konkret dhe verifiko rezultatin me testin e plotë.
+[?2004lbash: Aplikacioni: command not found
+[?2004hbash-5.3$ [7mnode app/test.js http://127.0.0.1:8080[27m[C[C[C[C[C[C[C[C[C[Cnode app/test.js http://127.0.0.1:8080
+[?2004lFAIL /healthz fetch failed
+FAIL /data fetch failed
+FAIL /compute?seed=abc fetch failed
+FAIL /file fetch failed
+FAIL /upstream fetch failed
+RESULT: FAIL (5)
+[?2004hbash-5.3$ [7mexit[27mexit
+[?2004lexit
+
+Script done on 2026-10-27 11:26:45+01:00 [COMMAND_EXIT_CODE="1"]

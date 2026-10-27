@@ -1,0 +1,10 @@
+scenario,variant,fault_verified,recovery_verified,method,repair,human_diagnosis_seconds,independent_timed_trial
+config,debian,True,True,manual_assisted,container_recreation,,False
+permissions,debian,True,True,manual_assisted,helper_container_chmod_0644,,False
+connectivity,debian,True,True,manual_assisted,container_recreation,,False
+config,alpine,True,True,automated,container_recreation,,False
+permissions,alpine,True,True,automated,helper_container_chmod_0644,,False
+connectivity,alpine,True,True,automated,container_recreation,,False
+config,distroless,True,True,automated,container_recreation,,False
+permissions,distroless,True,True,automated,helper_container_chmod_0644,,False
+connectivity,distroless,True,True,automated,container_recreation,,False

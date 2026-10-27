@@ -1,0 +1,10 @@
+REPS=10
+WARM=30
+MEAS=60
+CONNS=32
+ENDPOINT=/compute
+CPUS=1
+MEMORY=256m
+HOST_PORT=8080
+autocannon v8.0.0
+node v22.22.1

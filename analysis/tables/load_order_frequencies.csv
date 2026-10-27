@@ -1,0 +1,10 @@
+variant,position,count
+debian,1,7
+debian,2,1
+debian,3,2
+alpine,1,1
+alpine,2,4
+alpine,3,5
+distroless,1,2
+distroless,2,5
+distroless,3,3

@@ -1,0 +1,4 @@
+variant,components_total,components_os,components_npm,vulns_unique_total,os_total,os_critical,os_high,os_medium,os_low,os_unknown,project_total,project_critical,project_high,project_medium,project_low,project_unknown,other_lang_total,other_lang_critical,other_lang_high,other_lang_medium,other_lang_low,other_lang_unknown,unknown_lang_total,unknown_lang_critical,unknown_lang_high,unknown_lang_medium,unknown_lang_low,unknown_lang_unknown
+debian,372,88,283,348,290,6,68,120,90,6,7,0,2,3,2,0,51,2,31,16,2,0,0,0,0,0,0,0
+alpine,302,18,283,131,73,2,15,22,32,2,7,0,2,3,2,0,51,2,31,16,2,0,0,0,0,0,0,0
+distroless,81,10,70,78,71,1,6,35,27,2,7,0,2,3,2,0,0,0,0,0,0,0,0,0,0,0,0,0

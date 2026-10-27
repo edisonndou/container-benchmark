@@ -1,0 +1,221 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.debian
+#1 transferring dockerfile: 595B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:22.22.0-bookworm-slim
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 61B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 169B done
+#4 DONE 0.0s
+
+#5 [deps 1/4] FROM docker.io/library/node:22.22.0-bookworm-slim@sha256:dd9d21971ec4395903fa6143c2b9267d048ae01ca6d3ea96f16cb30df6187d94
+#5 resolve docker.io/library/node:22.22.0-bookworm-slim@sha256:dd9d21971ec4395903fa6143c2b9267d048ae01ca6d3ea96f16cb30df6187d94 0.0s done
+#5 DONE 0.0s
+
+#6 [deps 3/4] COPY package.json package-lock.json ./
+#6 CACHED
+
+#7 [deps 2/4] WORKDIR /app
+#7 CACHED
+
+#8 [stage-1 3/5] COPY --from=deps --chown=node:node /app/node_modules ./node_modules
+#8 CACHED
+
+#9 [deps 4/4] RUN npm ci --omit=dev && npm cache clean --force
+#9 CACHED
+
+#10 [stage-1 4/5] COPY --chown=node:node package.json server.js ./
+#10 CACHED
+
+#11 [stage-1 5/5] COPY --chown=node:node test-data/sample.txt /data/sample.txt
+#11 CACHED
+
+#12 exporting to image
+#12 exporting layers done
+#12 exporting manifest sha256:188d3e3aebe5e4f71d9514901f4d021ce17cc74099ff887584b49d014815015b done
+#12 exporting config sha256:7c230d031e3fe8e0332ef1198b8ae1cccf01ea0cbe7d3d6bf77e06955bc22e69 done
+#12 exporting attestation manifest sha256:b3ad7ff4ff2d0865ba02dac8d5b994ce2f82c8dc9976a91ab5f8e0366289a123 0.0s done
+#12 exporting manifest list sha256:2017d37c06040ab35b205d8ad75aa34043b1a917b90fc216c37fbf107f1d2404
+#12 exporting manifest list sha256:2017d37c06040ab35b205d8ad75aa34043b1a917b90fc216c37fbf107f1d2404 0.0s done
+#12 naming to docker.io/library/bench-debian:latest done
+#12 unpacking to docker.io/library/bench-debian:latest done
+#12 DONE 0.1s
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.alpine
+#1 transferring dockerfile: 567B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:22.22.0-alpine
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 61B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 169B done
+#4 DONE 0.0s
+
+#5 [deps 1/4] FROM docker.io/library/node:22.22.0-alpine@sha256:e4bf2a82ad0a4037d28035ae71529873c069b13eb0455466ae0bc13363826e34
+#5 resolve docker.io/library/node:22.22.0-alpine@sha256:e4bf2a82ad0a4037d28035ae71529873c069b13eb0455466ae0bc13363826e34 0.0s done
+#5 DONE 0.0s
+
+#6 [deps 2/4] WORKDIR /app
+#6 CACHED
+
+#7 [deps 3/4] COPY package.json package-lock.json ./
+#7 CACHED
+
+#8 [stage-1 3/5] COPY --from=deps --chown=node:node /app/node_modules ./node_modules
+#8 CACHED
+
+#9 [deps 4/4] RUN npm ci --omit=dev && npm cache clean --force
+#9 CACHED
+
+#10 [stage-1 4/5] COPY --chown=node:node package.json server.js ./
+#10 CACHED
+
+#11 [stage-1 5/5] COPY --chown=node:node test-data/sample.txt /data/sample.txt
+#11 CACHED
+
+#12 exporting to image
+#12 exporting layers done
+#12 exporting manifest sha256:074010e9f938074688360624e9ed3d77cfc4ac2b1aa958f0ab6619969c3cfc53 done
+#12 exporting config sha256:74ca12b9441ed6fe7b083a155febd390e476191a7097a6ca172a15f2c0a36ab9 done
+#12 exporting attestation manifest sha256:f3a01bf56da43710007c5f710cfea70f5ae972aebf5c3ae3e1cc0d05d162d238 0.0s done
+#12 exporting manifest list sha256:83c0b2888e77d61b0b80169c8373eaa78dd05bdd1bf773ef985fa7f373bcceaa
+#12 exporting manifest list sha256:83c0b2888e77d61b0b80169c8373eaa78dd05bdd1bf773ef985fa7f373bcceaa 0.0s done
+#12 naming to docker.io/library/bench-alpine:latest done
+#12 unpacking to docker.io/library/bench-alpine:latest done
+#12 DONE 0.1s
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.distroless
+#1 transferring dockerfile: 920B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:22.22.0-bookworm-slim
+#2 DONE 0.0s
+
+#3 [internal] load metadata for gcr.io/distroless/nodejs22-debian12:nonroot
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 61B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 169B done
+#5 DONE 0.0s
+
+#6 [stage-1 1/5] FROM gcr.io/distroless/nodejs22-debian12:nonroot@sha256:13593b7570658e8477de39e2f4a1dd25db2f836d68a0ba771251572d23bb4f8e
+#6 resolve gcr.io/distroless/nodejs22-debian12:nonroot@sha256:13593b7570658e8477de39e2f4a1dd25db2f836d68a0ba771251572d23bb4f8e 0.0s done
+#6 DONE 0.0s
+
+#7 [deps 1/4] FROM docker.io/library/node:22.22.0-bookworm-slim@sha256:dd9d21971ec4395903fa6143c2b9267d048ae01ca6d3ea96f16cb30df6187d94
+#7 resolve docker.io/library/node:22.22.0-bookworm-slim@sha256:dd9d21971ec4395903fa6143c2b9267d048ae01ca6d3ea96f16cb30df6187d94 0.0s done
+#7 DONE 0.0s
+
+#8 [stage-1 4/5] COPY --chown=nonroot:nonroot package.json server.js ./
+#8 CACHED
+
+#9 [stage-1 3/5] COPY --from=deps --chown=nonroot:nonroot /app/node_modules ./node_modules
+#9 CACHED
+
+#10 [stage-1 2/5] WORKDIR /app
+#10 CACHED
+
+#11 [deps 2/4] WORKDIR /app
+#11 CACHED
+
+#12 [deps 3/4] COPY package.json package-lock.json ./
+#12 CACHED
+
+#13 [deps 4/4] RUN npm ci --omit=dev && npm cache clean --force
+#13 CACHED
+
+#14 [stage-1 5/5] COPY --chown=nonroot:nonroot test-data/sample.txt /data/sample.txt
+#14 CACHED
+
+#15 exporting to image
+#15 exporting layers done
+#15 exporting manifest sha256:f46b558a96183a9befcce5450b9cf6597ed611d7fcbb51e3d4f09b866f86c9ea done
+#15 exporting config sha256:59d8a039ac0476d0c365b1bd0a1025dd92c52f2dc1875c2f5626f0ace93dc349 done
+#15 exporting attestation manifest sha256:2c3d7e9a7040b7dd16d1e40cae662c1c42c6b456cea230916626c9b244dde11b
+#15 exporting attestation manifest sha256:2c3d7e9a7040b7dd16d1e40cae662c1c42c6b456cea230916626c9b244dde11b 0.0s done
+#15 exporting manifest list sha256:bb94003c418b808587b8f16028510dfaaf3de5192c398a1cdb8e217a258aeb70 0.0s done
+#15 naming to docker.io/library/bench-distroless:latest done
+#15 unpacking to docker.io/library/bench-distroless:latest done
+#15 DONE 0.1s
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.distroless-debug
+#1 transferring dockerfile: 682B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:22.22.0-bookworm-slim
+#2 DONE 0.0s
+
+#3 [internal] load metadata for gcr.io/distroless/nodejs22-debian12:debug-nonroot
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 61B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 169B done
+#5 DONE 0.0s
+
+#6 [deps 1/4] FROM docker.io/library/node:22.22.0-bookworm-slim@sha256:dd9d21971ec4395903fa6143c2b9267d048ae01ca6d3ea96f16cb30df6187d94
+#6 resolve docker.io/library/node:22.22.0-bookworm-slim@sha256:dd9d21971ec4395903fa6143c2b9267d048ae01ca6d3ea96f16cb30df6187d94 0.0s done
+#6 DONE 0.0s
+
+#7 [stage-1 1/5] FROM gcr.io/distroless/nodejs22-debian12:debug-nonroot@sha256:7d24bff49abbd0555cf13179181e6420d13ee57634a887b195ee4051a55fc575
+#7 resolve gcr.io/distroless/nodejs22-debian12:debug-nonroot@sha256:7d24bff49abbd0555cf13179181e6420d13ee57634a887b195ee4051a55fc575 0.0s done
+#7 DONE 0.0s
+
+#8 [deps 4/4] RUN npm ci --omit=dev && npm cache clean --force
+#8 CACHED
+
+#9 [deps 3/4] COPY package.json package-lock.json ./
+#9 CACHED
+
+#10 [deps 2/4] WORKDIR /app
+#10 CACHED
+
+#11 [stage-1 3/5] COPY --from=deps --chown=nonroot:nonroot /app/node_modules ./node_modules
+#11 CACHED
+
+#12 [stage-1 2/5] WORKDIR /app
+#12 CACHED
+
+#13 [stage-1 4/5] COPY --chown=nonroot:nonroot package.json server.js ./
+#13 CACHED
+
+#14 [stage-1 5/5] COPY --chown=nonroot:nonroot test-data/sample.txt /data/sample.txt
+#14 CACHED
+
+#15 exporting to image
+#15 exporting layers done
+#15 exporting manifest sha256:629eee68f7454197d2f1a3c637799cb9b98537fcecd7e56fb284cb777ac7b041 done
+#15 exporting config sha256:1f7be8b449dc4d810a4dc4803f470081915813cba8a5dcc0202730b2c99e6ba2 done
+#15 exporting attestation manifest sha256:3a6acb9a28079a98087fd43ba4fc911df6c7ff2ae79baef53e7eb6ae6d5e8337
+#15 exporting attestation manifest sha256:3a6acb9a28079a98087fd43ba4fc911df6c7ff2ae79baef53e7eb6ae6d5e8337 0.0s done
+#15 exporting manifest list sha256:03d8483d5246c6c2455f0ee41c638bdb11368cd32d3d1163045815f6f3daee29 0.0s done
+#15 naming to docker.io/library/bench-distroless-debug:latest done
+#15 unpacking to docker.io/library/bench-distroless-debug:latest done
+#15 DONE 0.1s
+variant,image_id,size_bytes,node_version_in_image,built_at_utc
+debian,sha256:2017d37c06040ab35b205d8ad75aa34043b1a917b90fc216c37fbf107f1d2404,331684087,v22.22.0,2026-10-27T09:09:01Z
+alpine,sha256:83c0b2888e77d61b0b80169c8373eaa78dd05bdd1bf773ef985fa7f373bcceaa,234609317,v22.22.0,2026-10-27T09:09:03Z
+distroless,sha256:bb94003c418b808587b8f16028510dfaaf3de5192c398a1cdb8e217a258aeb70,209329755,v22.22.0,2026-10-27T09:09:05Z
+distroless-debug,sha256:03d8483d5246c6c2455f0ee41c638bdb11368cd32d3d1163045815f6f3daee29,211266326,v22.22.0,2026-10-27T09:09:08Z

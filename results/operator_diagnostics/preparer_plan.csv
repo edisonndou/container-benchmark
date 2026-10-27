@@ -1,0 +1,10 @@
+trial_id,order,scenario,variant
+trial01,1,config,distroless
+trial02,2,connectivity,debian
+trial03,3,permissions,alpine
+trial04,4,config,alpine
+trial05,5,connectivity,alpine
+trial06,6,permissions,debian
+trial07,7,config,debian
+trial08,8,permissions,distroless
+trial09,9,connectivity,distroless

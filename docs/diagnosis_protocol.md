@@ -72,3 +72,11 @@ Nje operator dhe nje prove per kombinim japin evidence
 eksploruese. Perseritja e skenareve mund te krijoje efekt mesimi.
 Rezultatet individuale dhe rendi raportohen, pa pretenduar
 pergjithesim per te gjithe operatoret.
+
+## Statusi perfundimtar i diagnostikimit
+
+Plani me nente prova te pavarura te matura nuk u realizua.
+U perdoren nente kontrolle pergatitore te defekteve dhe
+rikuperimit, plus nje orientim i asistuar pa kohe te raportuar.
+Metoda e zbatuar dhe kufizimet pershkruhen ne
+docs/operability_assessment.md.

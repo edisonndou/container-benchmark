@@ -144,3 +144,11 @@ Mbeten:
 - Protokolli dhe nente provat e diagnostikimit me dy persona.
 - Eksperimenti kryesor i nisjes dhe ngarkeses.
 - Analiza perfundimtare, figurat dhe punimi IEEE.
+
+## Statusi perfundimtar i diagnostikimit
+
+Plani me nente prova te pavarura te matura nuk u realizua.
+U perdoren nente kontrolle pergatitore te defekteve dhe
+rikuperimit, plus nje orientim i asistuar pa kohe te raportuar.
+Metoda e zbatuar dhe kufizimet pershkruhen ne
+docs/operability_assessment.md.

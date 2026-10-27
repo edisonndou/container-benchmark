@@ -1,0 +1,17 @@
+{
+  "operator": "Edison",
+  "preparer": "Edison",
+  "docker_experience": null,
+  "prior_exposure": "Ka kryer provat pergatitore dhe njeh zgjidhjet.",
+  "trial_timeout_seconds": 900,
+  "created_utc": "2026-10-27T10:15:50.255766+00:00",
+  "code_commit_at_preparation": "e8365691044715887467d924a93b5bbd35b6f48a",
+  "trial_count": 9,
+  "timing_started": false,
+  "assessment_type": "guided_recovery_validation",
+  "planned_operator": "Donart",
+  "assistance": [
+    "ChatGPT"
+  ],
+  "timing_used_for_analysis": false
+}

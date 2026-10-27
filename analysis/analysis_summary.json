@@ -1,0 +1,419 @@
+{
+  "performance": {
+    "debian": {
+      "startup_ms": {
+        "n_runs": 10,
+        "median": 501.0,
+        "q1": 493.5,
+        "q3": 614.0,
+        "iqr": 120.5,
+        "min": 488.0,
+        "max": 2359.0,
+        "mean": 726.9
+      },
+      "rps": {
+        "n_runs": 10,
+        "median": 280.945,
+        "q1": 272.365,
+        "q3": 284.15,
+        "iqr": 11.784999999999968,
+        "min": 252.1,
+        "max": 296,
+        "mean": 278.861
+      },
+      "p50_ms": {
+        "n_runs": 10,
+        "median": 107.5,
+        "q1": 106.0,
+        "q3": 110.0,
+        "iqr": 4.0,
+        "min": 104,
+        "max": 120,
+        "mean": 108.6
+      },
+      "p99_ms": {
+        "n_runs": 10,
+        "median": 223.5,
+        "q1": 220.0,
+        "q3": 230.25,
+        "iqr": 10.25,
+        "min": 211,
+        "max": 269,
+        "mean": 227.5
+      },
+      "transport_errors": {
+        "n_runs": 10,
+        "median": 0.0,
+        "q1": 0.0,
+        "q3": 0.0,
+        "iqr": 0.0,
+        "min": 0,
+        "max": 0,
+        "mean": 0
+      },
+      "non2xx": {
+        "n_runs": 10,
+        "median": 0.0,
+        "q1": 0.0,
+        "q3": 0.0,
+        "iqr": 0.0,
+        "min": 0,
+        "max": 0,
+        "mean": 0
+      },
+      "timeouts": {
+        "n_runs": 10,
+        "median": 0.0,
+        "q1": 0.0,
+        "q3": 0.0,
+        "iqr": 0.0,
+        "min": 0,
+        "max": 0,
+        "mean": 0
+      },
+      "cpu_mean_pct": {
+        "n_runs": 10,
+        "median": 96.24333333333334,
+        "q1": 95.927125,
+        "q3": 96.43466666666666,
+        "iqr": 0.5075416666666541,
+        "min": 95.48416666666667,
+        "max": 98.64125,
+        "mean": 96.41000833333334
+      },
+      "mem_mean_mib": {
+        "n_runs": 10,
+        "median": 31.27766666666667,
+        "q1": 30.87125,
+        "q3": 32.06633333333333,
+        "iqr": 1.1950833333333328,
+        "min": 30.347166666666666,
+        "max": 32.17133333333333,
+        "mean": 31.380766666666666
+      }
+    },
+    "alpine": {
+      "startup_ms": {
+        "n_runs": 10,
+        "median": 540.5,
+        "q1": 531.25,
+        "q3": 554.75,
+        "iqr": 23.5,
+        "min": 518.0,
+        "max": 1035.0,
+        "mean": 608.7
+      },
+      "rps": {
+        "n_runs": 10,
+        "median": 254.695,
+        "q1": 246.69,
+        "q3": 262.0525,
+        "iqr": 15.362500000000011,
+        "min": 207.12,
+        "max": 284.7,
+        "mean": 254.074
+      },
+      "p50_ms": {
+        "n_runs": 10,
+        "median": 119.0,
+        "q1": 116.25,
+        "q3": 122.0,
+        "iqr": 5.75,
+        "min": 107,
+        "max": 125,
+        "mean": 117.8
+      },
+      "p99_ms": {
+        "n_runs": 10,
+        "median": 250.0,
+        "q1": 245.25,
+        "q3": 253.5,
+        "iqr": 8.25,
+        "min": 218,
+        "max": 586,
+        "mean": 280.9
+      },
+      "transport_errors": {
+        "n_runs": 10,
+        "median": 0.0,
+        "q1": 0.0,
+        "q3": 0.0,
+        "iqr": 0.0,
+        "min": 0,
+        "max": 0,
+        "mean": 0
+      },
+      "non2xx": {
+        "n_runs": 10,
+        "median": 0.0,
+        "q1": 0.0,
+        "q3": 0.0,
+        "iqr": 0.0,
+        "min": 0,
+        "max": 0,
+        "mean": 0
+      },
+      "timeouts": {
+        "n_runs": 10,
+        "median": 0.0,
+        "q1": 0.0,
+        "q3": 0.0,
+        "iqr": 0.0,
+        "min": 0,
+        "max": 0,
+        "mean": 0
+      },
+      "cpu_mean_pct": {
+        "n_runs": 10,
+        "median": 96.32416666666667,
+        "q1": 96.00575,
+        "q3": 96.48366666666666,
+        "iqr": 0.47791666666665833,
+        "min": 95.53133333333334,
+        "max": 97.03833333333333,
+        "mean": 96.26046666666667
+      },
+      "mem_mean_mib": {
+        "n_runs": 10,
+        "median": 29.816833333333335,
+        "q1": 29.736083333333333,
+        "q3": 29.952958333333335,
+        "iqr": 0.2168750000000017,
+        "min": 29.684333333333335,
+        "max": 30.051666666666666,
+        "mean": 29.851216666666666
+      }
+    },
+    "distroless": {
+      "startup_ms": {
+        "n_runs": 10,
+        "median": 557.0,
+        "q1": 542.0,
+        "q3": 665.0,
+        "iqr": 123.0,
+        "min": 532.0,
+        "max": 2022.0,
+        "mean": 740.0
+      },
+      "rps": {
+        "n_runs": 10,
+        "median": 284.065,
+        "q1": 277.0425,
+        "q3": 288.2775,
+        "iqr": 11.234999999999957,
+        "min": 240.52,
+        "max": 288.94,
+        "mean": 278.054
+      },
+      "p50_ms": {
+        "n_runs": 10,
+        "median": 107.5,
+        "q1": 107.0,
+        "q3": 108.75,
+        "iqr": 1.75,
+        "min": 105,
+        "max": 130,
+        "mean": 109.7
+      },
+      "p99_ms": {
+        "n_runs": 10,
+        "median": 223.5,
+        "q1": 217.0,
+        "q3": 234.75,
+        "iqr": 17.75,
+        "min": 213,
+        "max": 283,
+        "mean": 231.4
+      },
+      "transport_errors": {
+        "n_runs": 10,
+        "median": 0.0,
+        "q1": 0.0,
+        "q3": 0.0,
+        "iqr": 0.0,
+        "min": 0,
+        "max": 0,
+        "mean": 0
+      },
+      "non2xx": {
+        "n_runs": 10,
+        "median": 0.0,
+        "q1": 0.0,
+        "q3": 0.0,
+        "iqr": 0.0,
+        "min": 0,
+        "max": 0,
+        "mean": 0
+      },
+      "timeouts": {
+        "n_runs": 10,
+        "median": 0.0,
+        "q1": 0.0,
+        "q3": 0.0,
+        "iqr": 0.0,
+        "min": 0,
+        "max": 0,
+        "mean": 0
+      },
+      "cpu_mean_pct": {
+        "n_runs": 10,
+        "median": 96.19008333333333,
+        "q1": 95.949375,
+        "q3": 96.27166666666666,
+        "iqr": 0.32229166666665776,
+        "min": 95.45816666666667,
+        "max": 96.627,
+        "mean": 96.12903333333334
+      },
+      "mem_mean_mib": {
+        "n_runs": 10,
+        "median": 32.60058333333333,
+        "q1": 32.249833333333335,
+        "q3": 32.991875,
+        "iqr": 0.7420416666666654,
+        "min": 32.1085,
+        "max": 33.51833333333333,
+        "mean": 32.66405
+      }
+    }
+  },
+  "security": [
+    {
+      "variant": "debian",
+      "components_total": 372,
+      "components_os": 88,
+      "components_npm": 283,
+      "project_unique_name_versions": 69,
+      "vulns_unique_total": 348,
+      "os_total": 290,
+      "os_critical": 6,
+      "os_high": 68,
+      "os_medium": 120,
+      "os_low": 90,
+      "os_unknown": 6,
+      "project_total": 7,
+      "project_critical": 0,
+      "project_high": 2,
+      "project_medium": 3,
+      "project_low": 2,
+      "project_unknown": 0,
+      "other_lang_total": 51,
+      "other_lang_critical": 2,
+      "other_lang_high": 31,
+      "other_lang_medium": 16,
+      "other_lang_low": 2,
+      "other_lang_unknown": 0,
+      "unknown_lang_total": 0,
+      "unknown_lang_critical": 0,
+      "unknown_lang_high": 0,
+      "unknown_lang_medium": 0,
+      "unknown_lang_low": 0,
+      "unknown_lang_unknown": 0,
+      "docker_reported_size_bytes": 331684087,
+      "docker_reported_size_MB": 331.684087,
+      "syft_reported_imageSize_bytes": 228921556
+    },
+    {
+      "variant": "alpine",
+      "components_total": 302,
+      "components_os": 18,
+      "components_npm": 283,
+      "project_unique_name_versions": 69,
+      "vulns_unique_total": 131,
+      "os_total": 73,
+      "os_critical": 2,
+      "os_high": 15,
+      "os_medium": 22,
+      "os_low": 32,
+      "os_unknown": 2,
+      "project_total": 7,
+      "project_critical": 0,
+      "project_high": 2,
+      "project_medium": 3,
+      "project_low": 2,
+      "project_unknown": 0,
+      "other_lang_total": 51,
+      "other_lang_critical": 2,
+      "other_lang_high": 31,
+      "other_lang_medium": 16,
+      "other_lang_low": 2,
+      "other_lang_unknown": 0,
+      "unknown_lang_total": 0,
+      "unknown_lang_critical": 0,
+      "unknown_lang_high": 0,
+      "unknown_lang_medium": 0,
+      "unknown_lang_low": 0,
+      "unknown_lang_unknown": 0,
+      "docker_reported_size_bytes": 234609317,
+      "docker_reported_size_MB": 234.609317,
+      "syft_reported_imageSize_bytes": 164406203
+    },
+    {
+      "variant": "distroless",
+      "components_total": 81,
+      "components_os": 10,
+      "components_npm": 70,
+      "project_unique_name_versions": 69,
+      "vulns_unique_total": 78,
+      "os_total": 71,
+      "os_critical": 1,
+      "os_high": 6,
+      "os_medium": 35,
+      "os_low": 27,
+      "os_unknown": 2,
+      "project_total": 7,
+      "project_critical": 0,
+      "project_high": 2,
+      "project_medium": 3,
+      "project_low": 2,
+      "project_unknown": 0,
+      "other_lang_total": 0,
+      "other_lang_critical": 0,
+      "other_lang_high": 0,
+      "other_lang_medium": 0,
+      "other_lang_low": 0,
+      "other_lang_unknown": 0,
+      "unknown_lang_total": 0,
+      "unknown_lang_critical": 0,
+      "unknown_lang_high": 0,
+      "unknown_lang_medium": 0,
+      "unknown_lang_low": 0,
+      "unknown_lang_unknown": 0,
+      "docker_reported_size_bytes": 209329755,
+      "docker_reported_size_MB": 209.329755,
+      "syft_reported_imageSize_bytes": 149424298
+    }
+  ],
+  "cpu_sensitivity": [
+    {
+      "variant": "debian",
+      "primary_cpu_median_of_run_means": 96.24333333333334,
+      "exploratory_cpu_median_without_first_sample": 97.04642857142858,
+      "difference_percentage_points": 0.8030952380952385
+    },
+    {
+      "variant": "alpine",
+      "primary_cpu_median_of_run_means": 96.32416666666667,
+      "exploratory_cpu_median_without_first_sample": 97.12596638655462,
+      "difference_percentage_points": 0.8017997198879527
+    },
+    {
+      "variant": "distroless",
+      "primary_cpu_median_of_run_means": 96.19008333333333,
+      "exploratory_cpu_median_without_first_sample": 96.99155462184873,
+      "difference_percentage_points": 0.8014712885154012
+    }
+  ],
+  "settings": {
+    "REPS": "10",
+    "WARM": "30",
+    "MEAS": "60",
+    "CONNS": "32",
+    "ENDPOINT": "/compute",
+    "CPUS": "1",
+    "MEMORY": "256m",
+    "HOST_PORT": "8080"
+  },
+  "checks_passed": 242,
+  "total_http_200": 486585
+}

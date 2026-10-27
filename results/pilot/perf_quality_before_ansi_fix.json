@@ -1,0 +1,33 @@
+{
+  "counts": {
+    "debian": {
+      "startup_attempts": 3,
+      "startup_failed": 0,
+      "load_attempts": 3,
+      "load_reports": 3
+    },
+    "alpine": {
+      "startup_attempts": 3,
+      "startup_failed": 0,
+      "load_attempts": 3,
+      "load_reports": 3
+    },
+    "distroless": {
+      "startup_attempts": 3,
+      "startup_failed": 0,
+      "load_attempts": 3,
+      "load_reports": 3
+    }
+  },
+  "issues": [
+    "load ('1', 'debian'): invalid resource data: could not convert string to float: '\\x1b[H0.55'",
+    "load ('1', 'alpine'): invalid resource data: could not convert string to float: '\\x1b[H0.55'",
+    "load ('1', 'distroless'): invalid resource data: could not convert string to float: '\\x1b[H0.54'",
+    "load ('2', 'alpine'): invalid resource data: could not convert string to float: '\\x1b[H0.53'",
+    "load ('2', 'distroless'): invalid resource data: could not convert string to float: '\\x1b[H0.52'",
+    "load ('2', 'debian'): invalid resource data: could not convert string to float: '\\x1b[H0.51'",
+    "load ('3', 'debian'): invalid resource data: could not convert string to float: '\\x1b[H0.51'",
+    "load ('3', 'distroless'): invalid resource data: could not convert string to float: '\\x1b[H0.50'",
+    "load ('3', 'alpine'): invalid resource data: could not convert string to float: '\\x1b[H0.49'"
+  ]
+}

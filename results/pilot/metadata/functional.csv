@@ -1,0 +1,5 @@
+variant,result
+debian,PASS
+alpine,PASS
+distroless,PASS
+distroless-debug,PASS

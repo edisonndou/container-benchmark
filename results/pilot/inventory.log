@@ -1,0 +1,5 @@
+variant,files_total,sh,bash,apt,apt-get,apk,dpkg,curl,wget,ps,ls,cat,busybox
+debian,8385,yes,yes,yes,yes,no,yes,no,no,no,yes,yes,no
+alpine,4670,yes,no,no,no,yes,no,no,yes,yes,yes,yes,yes
+distroless,2548,no,no,no,no,no,no,no,no,no,no,no,no
+distroless-debug,2931,yes,no,no,no,no,yes,no,yes,yes,yes,yes,yes

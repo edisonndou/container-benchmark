@@ -7,7 +7,7 @@
 
 ## Verdict and scope
 
-The code implements the intended three-image benchmark, and independent reanalysis supports the archived main performance/security results. The code corrections in this audit have passed the available shell/JavaScript syntax checks, but **fresh Docker execution has not been validated**. Two exact-byte integrity checks fail in this Windows checkout; all affected historical inputs match their recorded hashes after explicit in-memory newline normalization.
+The code implements the intended three-image benchmark, and independent reanalysis supports the archived main performance/security results. The initial audit established shell/JavaScript syntax and archived-data agreement. A subsequent user-provided console transcript confirms successful fresh Docker builds, functional validation, scanning, and the full pilot pipeline. This follow-up confirms the successful execution path, not all injected failure branches. Two exact-byte integrity checks remain in this Windows checkout; all affected historical inputs match their recorded hashes after explicit in-memory newline normalization.
 
 The latest user instruction excludes work on the finished paper, presentation, and final documents. This report therefore focuses on source code, measurement logic, archived evidence, and execution documentation. It does not certify final-document compliance or declare the seminar submission 100% complete. The original professor's seminar plan was not located, so the requirements below are assessed against the supplied requirement list and the repository's method records, not authenticated professor instructions.
 
@@ -55,7 +55,7 @@ The authoritative new reanalysis output is [`analysis/audit-2026-10-31-reviewed/
 | Non-root and runtime controls | VERIFIED | Dockerfile USER declarations plus all 30 measured container inspection records: `node`/`nonroot`, 1 CPU, 268435456-byte memory limit. All four recorded Node runtimes are v22.22.0. |
 | Main workload/counts | VERIFIED | 30 unique startup attempts, 30 load trials, /compute, 32 connections, 30-second warm-up setting, approximately 60-second measured reports. |
 | Run-level resource aggregation | VERIFIED | Both analysis implementations aggregate 120 samples per run before cross-run summaries; 3,600 samples total. |
-| Fresh operation of corrected scripts | PARTIAL | Shell syntax passes. New orchestration/cache paths and Python snippets have not been executed in Linux/Docker. |
+| Fresh operation of corrected scripts | PARTIAL | Follow-up user-provided transcript confirms builds, functionality, independent output/cache paths, scans, Python summaries, and the successful pilot completion gate in Linux/Docker. Injected failure branches and fault-script changes were not freshly exercised. |
 | Historical Trivy database binary | MISSING | `.cache/trivy/db/trivy.db` is absent. Its original checksum cannot be independently verified. |
 | Nine fault/recovery combinations | VERIFIED | Three assisted manual Debian and six automated Alpine/Distroless combinations independently checked against archived before/after records and successful recovery logs. |
 | Independent human diagnosis-time study | MISSING | Original method proposed an independent operator. Session records show zero independent timed trials. This remains a deviation from the original plan, not a completed experiment. |
@@ -255,11 +255,51 @@ Changes to other historical notes listed in the initial dirty tree predate this 
 
 ## Remaining actions and readiness
 
-1. **Code execution coverage:** If fresh assurance is required, explicitly authorize validation of the changed scan/orchestration/fault paths on an isolated Linux/Docker environment. Bash syntax does not validate embedded Python or Docker behavior.
+1. **Code execution coverage:** The follow-up transcript confirms the fresh successful pilot path. Additional injected-failure and fault-script checks remain outside that evidence; no new main benchmark run is necessary solely to validate the successful pilot workflow.
 2. **Standalone functional runner:** Its exit/cleanup caveat remains documented; modifying/testing the test runner requires separate explicit test-work authorization under the standing preference.
 3. **Historical reproducibility:** Recover the original ZIP and matching Trivy database when exact-byte/scan reproduction is required. Preserve and disclose the existing newline mismatch rather than rewriting it away.
 4. **Research scope:** Keep independent diagnosis time and operator productivity outside the reported results. Instructor acceptance of that scope is a formal matter, not something code can establish.
 5. **Delivery:** Review the local diff and separately authorize any commit/push or package handoff. Confirm the intended revision or ZIP and access rights at submission time.
 6. **Final documents:** The authors' finished 7-page IEEE paper, source, and presentation remain their external submission artifacts. Their format, references, links, IDs, and final consistency have not been certified here at the user's request. Do not substitute the analysis PDF or a 10-page single-column variant for the stated IEEE submission.
 
-**Readiness conclusion:** Source corrections and independently recomputed historical results are available for review. Full fresh execution and formal submission readiness are not verified. No absolute correctness or 100%-completion claim is made.
+**Readiness conclusion:** Source corrections, independently recomputed historical results, and user-supplied successful fresh pilot evidence support publishing the code for review. All failure branches and formal submission compliance are not certified. No absolute correctness or 100%-completion claim is made.
+
+## Follow-up: user-executed fresh pilot validation
+
+After the initial audit, the user supplied a console transcript from
+`/home/lenovo_edison/container-benchmark-check-I2gmpK`. A copy is preserved at
+[analysis/user-validation-2026-10-31/console.txt](../analysis/user-validation-2026-10-31/console.txt).
+The entries earlier in this report describing checks as NOT RUN refer to the
+agent's initial audit environment. This transcript is reviewed user-provided
+execution evidence, not a rerun by the agent or an independent raw-file audit
+of the new replication.
+
+The transcript shows:
+
+- Preflight printed READY, including Docker access and resource-limit checks.
+- All four images built and recorded Node.js v22.22.0.
+- All five endpoint checks passed for each of the four image variants.
+- Tool inventory, Syft/Trivy scanning, and scan-summary Python execution completed.
+- A new Trivy database downloaded into the selected replication cache; all
+  displayed database/metadata checksum checks passed.
+- Nine successful startup attempts and nine COMPLETED/0 load runs were recorded:
+  three per primary variant.
+- Performance analysis reported zero transport errors, non-2xx responses, and
+  timeouts, with three successful reports per primary variant and `issues: []`.
+- The pipeline printed its completion message and retained its outputs at
+  `replications/validation-01/pilot` in the Linux copy.
+
+The initial `newgrp` command was unavailable, but subsequent Docker access
+and the entire pipeline succeeded; this did not block validation. The earlier
+PowerShell CRLF error preceded conversion of the shell sources to LF.
+
+The new scan reports 345 / 133 / 81 global finding identities for
+Debian / Alpine / Distroless, including eight shared project identities per
+image, compared with the historical seven. These are new-replication findings
+with a newly downloaded database, not replacements for the archived main
+study. Keep the original results, paper tables, and historical provenance intact.
+
+The new raw replication files and database binary were not imported into this
+Windows workspace or independently rehashed. Missing-historical-binary and
+historical-line-ending limitations therefore remain unchanged. The final
+paper/presentation remain outside this code-focused review.

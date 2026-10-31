@@ -4,6 +4,8 @@ A controlled comparison of **Debian Slim, Alpine, and Distroless** running the s
 
 The repository includes source code, a pilot, a main experiment, raw evidence, and analysis. The [final technical audit](docs/FINAL_AUDIT.md) separates code inspection, historical execution evidence, independently recomputed results, and work that requires a new execution environment. File presence alone does not establish completion of the seminar requirements.
 
+A subsequent [user-provided validation transcript](analysis/user-validation-2026-10-31/console.txt) confirms successful fresh builds, functional checks for all four variants, scans, and a complete three-repetition pilot with `issues: []`. These new validation results remain separate from the archived main study. See the audit's follow-up section for the evidence boundary.
+
 ## Authors and equal contribution
 
 | Author | Student ID | Declared contribution |
@@ -244,7 +246,7 @@ Each run directory must be new. The pipeline builds, checks functionality, inven
 
 Startup readiness requires HTTP 200 and JSON `status=ok`, without following redirects. Load warm-up and measured requests are separate. Logs, exit status, OOM/restart state, container inspection, and resource samples are retained. CPU and memory are averaged **within each run** before summarizing across runs. The run is the experimental repetition, not an individual resource sample.
 
-The audited pipeline now refuses to write a completion timestamp if quality issues exist or expected successful trial counts are missing. This quality gate and filesystem-isolation controls were added after the historical measurements. They have passed syntax inspection but have not been exercised in a fresh Docker run.
+The audited pipeline now refuses to write a completion timestamp if quality issues exist or expected successful trial counts are missing. This quality gate and filesystem-isolation controls were added after the historical measurements. Syntax checks and the user-provided fresh pilot transcript support the successful execution path; injected failure paths were not freshly exercised.
 
 ## Fault injection and recovery
 
@@ -346,7 +348,7 @@ ChatGPT/Codex assisted with code/procedure preparation, interpretation, assisted
 - [x] Pilot and main evidence are retained separately; main results were independently recomputed.
 - [x] Authors, student IDs, equal contributions, limitations, and AI assistance are declared.
 - [ ] Review the two exact-byte integrity failures and obtain byte-faithful source evidence if exact reproduction is required.
-- [ ] If fresh execution assurance is required, explicitly authorize validation of the changed orchestration in an isolated Linux/Docker environment.
+- [x] User-provided console evidence confirms fresh builds, four-variant functional success, scans, and a complete pilot with no quality issues; this does not certify every failure branch.
 - [ ] Attach/link the authors' final 7-page IEEE PDF, LaTeX sources, and PDF/PPTX presentation; final-document compliance is outside this audit.
 - [ ] Publish the intended repository revision or provide a ZIP containing these local corrections; verify recipient access.
 - [ ] Confirm professor-specific acceptance of the reduced operator-study scope and other formal requirements.

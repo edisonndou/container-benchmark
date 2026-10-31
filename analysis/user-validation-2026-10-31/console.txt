@@ -1,0 +1,675 @@
+PS C:\Users\Lenovo\Desktop\container-benchmark> # Install dependencies once; reopen the terminal afterward.
+PS C:\Users\Lenovo\Desktop\container-benchmark> bash scripts/setup.sh
+
+: invalid option namee 5: set: pipefail
+PS C:\Users\Lenovo\Desktop\container-benchmark> bash scripts/setup.sh
+: invalid option namee 5: set: pipefail
+PS C:\Users\Lenovo\Desktop\container-benchmark> wsl
+lenovo_edison@eCodeTech:/mnt/c/Users/Lenovo/Desktop/container-benchmark$ project_dir=$(mktemp -d "$HOME/container-benchmark-check-XXXXXX")
+cp -a /mnt/c/Users/Lenovo/Desktop/container-benchmark/. "$project_dir/"
+cd "$project_dir"
+pwd
+bash scripts/setup.sh
+/home/lenovo_edison/container-benchmark-check-I2gmpK
+
+==> Base packages
+[sudo: authenticate] Password:             
+sudo: Authentication failed, try again.
+[sudo: authenticate] Password:     
+Hit:1 http://archive.ubuntu.com/ubuntu resolute InRelease
+Get:2 http://security.ubuntu.com/ubuntu resolute-security InRelease [137 kB]          
+Get:3 http://archive.ubuntu.com/ubuntu resolute-updates InRelease [137 kB]            
+Get:4 https://download.docker.com/linux/ubuntu resolute InRelease [32.5 kB]           
+Get:5 https://download.docker.com/linux/ubuntu resolute/stable amd64 Packages [32.3 kB]
+Get:6 http://archive.ubuntu.com/ubuntu resolute-backports InRelease [137 kB]          
+Get:7 http://security.ubuntu.com/ubuntu resolute-security/main amd64 Packages [607 kB]
+Get:8 http://archive.ubuntu.com/ubuntu resolute-updates/main amd64 Packages [803 kB]
+Get:9 http://security.ubuntu.com/ubuntu resolute-security/main amd64 Components [46.7 kB]
+Get:10 http://security.ubuntu.com/ubuntu resolute-security/universe amd64 Packages [206 kB]
+Get:11 http://security.ubuntu.com/ubuntu resolute-security/universe amd64 Components [55.5 kB]
+Get:12 http://archive.ubuntu.com/ubuntu resolute-updates/main Translation-en [184 kB] 
+Get:13 http://archive.ubuntu.com/ubuntu resolute-updates/main amd64 Components [110 kB]
+Get:14 http://archive.ubuntu.com/ubuntu resolute-updates/universe amd64 Packages [374 kB]
+Get:15 http://archive.ubuntu.com/ubuntu resolute-updates/universe Translation-en [118 kB]
+Get:16 http://archive.ubuntu.com/ubuntu resolute-updates/universe amd64 Components [201 kB]
+Get:17 http://archive.ubuntu.com/ubuntu resolute-updates/restricted amd64 Packages [542 kB]
+Get:18 http://archive.ubuntu.com/ubuntu resolute-updates/restricted Translation-en [112 kB]
+Get:19 http://archive.ubuntu.com/ubuntu resolute-backports/universe amd64 Components [1060 B]
+Fetched 3836 kB in 1s (3388 kB/s)                
+Reading package lists... Done
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+curl is already the newest version (8.18.0-1ubuntu2.8).
+curl set to manually installed.
+ca-certificates is already the newest version (20260816ubuntu0.26.04.1).
+ca-certificates set to manually installed.
+jq is already the newest version (1.8.1-4ubuntu2).
+python3 is already the newest version (3.14.3-0ubuntu2).
+python3 set to manually installed.
+git is already the newest version (1:2.53.0-1ubuntu1.1).
+git set to manually installed.
+coreutils is already the newest version (9.5-1ubuntu2+0.0.0~ubuntu25).
+Solving dependencies... Done
+0 upgraded, 0 newly installed, 0 to remove and 31 not upgraded.
+
+==> Docker already installed: Docker version 29.9.2, build a82e528
+
+==> Allow your user to run docker without sudo
+
+==> Start the Docker service
+Synchronizing state of docker.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+Executing: /usr/lib/systemd/systemd-sysv-install enable docker
+
+==> Node already installed: v22.22.1
+
+==> autocannon 8.0.0
+npm WARN deprecated uuid@8.3.2: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
+
+added 62 packages in 7s
+
+12 packages are looking for funding
+  run `npm fund` for details
+
+==> Syft already installed
+
+==> Trivy already installed
+
+==> Done. IMPORTANT: close this terminal and open a new one (or run: newgrp docker),
+
+==> then run: bash scripts/preflight.sh
+lenovo_edison@eCodeTech:~/container-benchmark-check-I2gmpK$ newgrp docker
+Command 'newgrp' not found, but can be installed with:
+sudo apt install util-linux-extra
+lenovo_edison@eCodeTech:~/container-benchmark-check-I2gmpK$ cd ~/container-benchmark-check-I2gmpK
+
+export RESULTS_DIR="$PWD/replications/validation-01"
+export TRIVY_CACHE_DIR="$PWD/.cache/trivy-validation-01"
+
+bash scripts/preflight.sh
+Checking tools
+  [ OK ] docker
+  [ OK ] node
+  [ OK ] npm
+  [ OK ] autocannon
+  [ OK ] syft
+  [ OK ] trivy
+  [ OK ] jq
+  [ OK ] python3
+  [ OK ] curl
+  [ OK ] shuf
+  [ OK ] Docker daemon reachable
+  [ OK ] Node >= 22
+Checking location and host
+  [ OK ] Repo is on the Linux filesystem
+  [WARN] Running in WSL2: record this as a limitation in the paper.
+  [ OK ] Architecture x86_64
+  [ OK ] 12 CPUs visible
+  [ OK ] 6860 MB RAM
+  [ OK ] Idle machine (load 0.07)
+Checking that container limits really work
+  [ OK ] docker run with --cpus/--memory
+  memory limit seen inside container: 256 MB (expected ~256)
+Pre-pulling base images
+  [ OK ] pulled node:22.22.0-bookworm-slim
+  [ OK ] pulled node:22.22.0-alpine
+  [ OK ] pulled gcr.io/distroless/nodejs22-debian12:nonroot
+  [ OK ] pulled gcr.io/distroless/nodejs22-debian12:debug-nonroot
+  [ OK ] wrote /home/lenovo_edison/container-benchmark-check-I2gmpK/replications/validation-01/environment.md (add 'wsl --version' and Windows version by hand if on WSL2)
+
+READY. Next: bash scripts/run_all.sh pilot
+lenovo_edison@eCodeTech:~/container-benchmark-check-I2gmpK$ bash scripts/build.sh
+bash scripts/functional.sh
+cat "$RESULTS_DIR/functional.csv"
+[+] Building 5.2s (12/12) FINISHED                                      docker:default
+ => [internal] load build definition from Dockerfile.debian                       0.0s
+ => => transferring dockerfile: 611B                                              0.0s
+ => [internal] load metadata for docker.io/library/node:22.22.0-bookworm-slim     0.0s
+ => [internal] load .dockerignore                                                 0.0s
+ => => transferring context: 63B                                                  0.0s
+ => [internal] load build context                                                 0.0s
+ => => transferring context: 34.00kB                                              0.0s
+ => [deps 1/4] FROM docker.io/library/node:22.22.0-bookworm-slim@sha256:dd9d2197  0.0s
+ => => resolve docker.io/library/node:22.22.0-bookworm-slim@sha256:dd9d21971ec43  0.0s
+ => CACHED [deps 2/4] WORKDIR /app                                                0.0s
+ => [deps 3/4] COPY package.json package-lock.json ./                             0.0s
+ => [deps 4/4] RUN npm ci --omit=dev && npm cache clean --force                   4.0s
+ => [stage-1 3/5] COPY --from=deps --chown=node:node /app/node_modules ./node_mo  0.2s 
+ => [stage-1 4/5] COPY --chown=node:node package.json server.js ./                0.1s 
+ => [stage-1 5/5] COPY --chown=node:node test-data/sample.txt /data/sample.txt    0.1s 
+ => exporting to image                                                            0.5s 
+ => => exporting layers                                                           0.2s 
+ => => exporting manifest sha256:362df163e58c3fa9ab3d1e9e09b8e366664f3ddcf748b3a  0.0s 
+ => => exporting config sha256:b0a8bb7ab93b9ceeea56031d711848b375dc1ca2b2bc3f8bb  0.0s
+ => => exporting attestation manifest sha256:3b550cd13e3a4a540acef9cf40b5c99bbab  0.0s
+ => => exporting manifest list sha256:54e7a2b828d18d6a6a71be8d575ec95b7530c468db  0.0s
+ => => naming to docker.io/library/bench-debian:latest                            0.0s
+ => => unpacking to docker.io/library/bench-debian:latest                         0.2s
+[+] Building 5.0s (12/12) FINISHED                                      docker:default
+ => [internal] load build definition from Dockerfile.alpine                       0.0s
+ => => transferring dockerfile: 583B                                              0.0s
+ => [internal] load metadata for docker.io/library/node:22.22.0-alpine            0.0s
+ => [internal] load .dockerignore                                                 0.0s
+ => => transferring context: 63B                                                  0.0s
+ => [internal] load build context                                                 0.0s
+ => => transferring context: 169B                                                 0.0s
+ => [deps 1/4] FROM docker.io/library/node:22.22.0-alpine@sha256:e4bf2a82ad0a403  0.0s
+ => => resolve docker.io/library/node:22.22.0-alpine@sha256:e4bf2a82ad0a4037d280  0.0s
+ => CACHED [deps 2/4] WORKDIR /app                                                0.0s
+ => [deps 3/4] COPY package.json package-lock.json ./                             0.0s
+ => [deps 4/4] RUN npm ci --omit=dev && npm cache clean --force                   4.0s
+ => [stage-1 3/5] COPY --from=deps --chown=node:node /app/node_modules ./node_mo  0.2s 
+ => [stage-1 4/5] COPY --chown=node:node package.json server.js ./                0.1s 
+ => [stage-1 5/5] COPY --chown=node:node test-data/sample.txt /data/sample.txt    0.1s 
+ => exporting to image                                                            0.5s 
+ => => exporting layers                                                           0.1s 
+ => => exporting manifest sha256:4722a8770ecda587760fb7bf53ea03acd784432a0d6cd68  0.0s 
+ => => exporting config sha256:866b5ed689bbfad096dc4d3dff1346af79fdff9a022386a0e  0.0s
+ => => exporting attestation manifest sha256:9d89d8e597edcab654e7a4a3d7f0774071f  0.0s
+ => => exporting manifest list sha256:fef336ef43834b7c15206844946a2729f248380d01  0.0s
+ => => naming to docker.io/library/bench-alpine:latest                            0.0s
+ => => unpacking to docker.io/library/bench-alpine:latest                         0.2s
+[+] Building 1.0s (15/15) FINISHED                                      docker:default
+ => [internal] load build definition from Dockerfile.distroless                   0.0s
+ => => transferring dockerfile: 939B                                              0.0s
+ => [internal] load metadata for docker.io/library/node:22.22.0-bookworm-slim     0.0s
+ => [internal] load metadata for gcr.io/distroless/nodejs22-debian12:nonroot      0.0s
+ => [internal] load .dockerignore                                                 0.0s
+ => => transferring context: 63B                                                  0.0s
+ => [deps 1/4] FROM docker.io/library/node:22.22.0-bookworm-slim@sha256:dd9d2197  0.0s
+ => => resolve docker.io/library/node:22.22.0-bookworm-slim@sha256:dd9d21971ec43  0.0s
+ => [stage-1 1/5] FROM gcr.io/distroless/nodejs22-debian12:nonroot@sha256:13593b  0.0s
+ => => resolve gcr.io/distroless/nodejs22-debian12:nonroot@sha256:13593b7570658e  0.0s
+ => [internal] load build context                                                 0.0s
+ => => transferring context: 169B                                                 0.0s
+ => CACHED [deps 2/4] WORKDIR /app                                                0.0s
+ => CACHED [deps 3/4] COPY package.json package-lock.json ./                      0.0s
+ => CACHED [deps 4/4] RUN npm ci --omit=dev && npm cache clean --force            0.0s
+ => CACHED [stage-1 2/5] WORKDIR /app                                             0.0s
+ => [stage-1 3/5] COPY --from=deps --chown=nonroot:nonroot /app/node_modules ./n  0.2s
+ => [stage-1 4/5] COPY --chown=nonroot:nonroot package.json server.js ./          0.1s
+ => [stage-1 5/5] COPY --chown=nonroot:nonroot test-data/sample.txt /data/sample  0.0s
+ => exporting to image                                                            0.5s
+ => => exporting layers                                                           0.2s
+ => => exporting manifest sha256:bede1783f5ecae200d522f2e7ea3a72d0e48577ffd3d839  0.0s
+ => => exporting config sha256:637d292895db6f67019d5438c489797657d0202f949e774e1  0.0s
+ => => exporting attestation manifest sha256:b56f5cb01a988ba8abdfc8a3fe779a6a664  0.0s
+ => => exporting manifest list sha256:e5cf0d9791234274d2128c0aaea471b1c23e154c64  0.0s
+ => => naming to docker.io/library/bench-distroless:latest                        0.0s
+ => => unpacking to docker.io/library/bench-distroless:latest                     0.2s
+[+] Building 1.0s (15/15) FINISHED                                      docker:default
+ => [internal] load build definition from Dockerfile.distroless-debug             0.0s
+ => => transferring dockerfile: 698B                                              0.0s
+ => [internal] load metadata for gcr.io/distroless/nodejs22-debian12:debug-nonro  0.0s
+ => [internal] load metadata for docker.io/library/node:22.22.0-bookworm-slim     0.0s
+ => [internal] load .dockerignore                                                 0.0s
+ => => transferring context: 63B                                                  0.0s
+ => [deps 1/4] FROM docker.io/library/node:22.22.0-bookworm-slim@sha256:dd9d2197  0.0s
+ => => resolve docker.io/library/node:22.22.0-bookworm-slim@sha256:dd9d21971ec43  0.0s
+ => [stage-1 1/5] FROM gcr.io/distroless/nodejs22-debian12:debug-nonroot@sha256:  0.0s
+ => => resolve gcr.io/distroless/nodejs22-debian12:debug-nonroot@sha256:7d24bff4  0.0s
+ => [internal] load build context                                                 0.0s
+ => => transferring context: 169B                                                 0.0s
+ => CACHED [deps 2/4] WORKDIR /app                                                0.0s
+ => CACHED [deps 3/4] COPY package.json package-lock.json ./                      0.0s
+ => CACHED [deps 4/4] RUN npm ci --omit=dev && npm cache clean --force            0.0s
+ => CACHED [stage-1 2/5] WORKDIR /app                                             0.0s
+ => [stage-1 3/5] COPY --from=deps --chown=nonroot:nonroot /app/node_modules ./n  0.2s
+ => [stage-1 4/5] COPY --chown=nonroot:nonroot package.json server.js ./          0.1s
+ => [stage-1 5/5] COPY --chown=nonroot:nonroot test-data/sample.txt /data/sample  0.0s
+ => exporting to image                                                            0.5s
+ => => exporting layers                                                           0.2s
+ => => exporting manifest sha256:e3243d9164d550e2709acc4deaaec52671ebebc46940568  0.0s
+ => => exporting config sha256:f12760ae1104a6034accdcbdc15d0840c252dc0426e2b6244  0.0s
+ => => exporting attestation manifest sha256:732031e77041158cca130586abb6f3b4a44  0.0s
+ => => exporting manifest list sha256:3d4e1889b01af14dd7dfe68b6d650adf772c74b200  0.0s
+ => => naming to docker.io/library/bench-distroless-debug:latest                  0.0s
+ => => unpacking to docker.io/library/bench-distroless-debug:latest               0.2s
+variant,image_id,size_bytes,node_version_in_image,built_at_utc
+debian,sha256:54e7a2b828d18d6a6a71be8d575ec95b7530c468dbde458db6f03784174972e8,331684209,v22.22.0,2026-10-31T21:18:48Z
+alpine,sha256:fef336ef43834b7c15206844946a2729f248380d01e26173e40120ffbe3a3ef7,234609418,v22.22.0,2026-10-31T21:18:54Z
+distroless,sha256:e5cf0d9791234274d2128c0aaea471b1c23e154c644f76bac8089e4d581e1df0,209329853,v22.22.0,2026-10-31T21:18:58Z
+distroless-debug,sha256:3d4e1889b01af14dd7dfe68b6d650adf772c74b20095b0d2e04d27191e2dbd04,211266421,v22.22.0,2026-10-31T21:19:01Z
+PASS /healthz (200)
+PASS /data (200)
+PASS /compute?seed=abc (200)
+PASS /file (200)
+PASS /upstream (200)
+RESULT: PASS
+debian,PASS
+PASS /healthz (200)
+PASS /data (200)
+PASS /compute?seed=abc (200)
+PASS /file (200)
+PASS /upstream (200)
+RESULT: PASS
+alpine,PASS
+PASS /healthz (200)
+PASS /data (200)
+PASS /compute?seed=abc (200)
+PASS /file (200)
+PASS /upstream (200)
+RESULT: PASS
+distroless,PASS
+PASS /healthz (200)
+PASS /data (200)
+PASS /compute?seed=abc (200)
+PASS /file (200)
+PASS /upstream (200)
+RESULT: PASS
+distroless-debug,PASS
+variant,result
+debian,PASS
+alpine,PASS
+distroless,PASS
+distroless-debug,PASS
+lenovo_edison@eCodeTech:~/container-benchmark-check-I2gmpK$ bash scripts/run_all.sh pilot "$RESULTS_DIR/pilot"
+cat "$RESULTS_DIR/pilot/perf_quality.json"
+warning: in the working copy of 'scripts/analyze_perf.py', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'scripts/analyze_scan.py', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'scripts/prepare_diagnosis_session.py', CRLF will be replaced by LF the next time Git touches it
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.debian
+#1 transferring dockerfile: 611B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:22.22.0-bookworm-slim
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 63B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 169B done
+#4 DONE 0.0s
+
+#5 [deps 1/4] FROM docker.io/library/node:22.22.0-bookworm-slim@sha256:dd9d21971ec4395903fa6143c2b9267d048ae01ca6d3ea96f16cb30df6187d94
+#5 resolve docker.io/library/node:22.22.0-bookworm-slim@sha256:dd9d21971ec4395903fa6143c2b9267d048ae01ca6d3ea96f16cb30df6187d94 0.0s done
+#5 DONE 0.0s
+
+#6 [deps 2/4] WORKDIR /app
+#6 CACHED
+
+#7 [deps 4/4] RUN npm ci --omit=dev && npm cache clean --force
+#7 CACHED
+
+#8 [stage-1 3/5] COPY --from=deps --chown=node:node /app/node_modules ./node_modules
+#8 CACHED
+
+#9 [deps 3/4] COPY package.json package-lock.json ./
+#9 CACHED
+
+#10 [stage-1 4/5] COPY --chown=node:node package.json server.js ./
+#10 CACHED
+
+#11 [stage-1 5/5] COPY --chown=node:node test-data/sample.txt /data/sample.txt
+#11 CACHED
+
+#12 exporting to image
+#12 exporting layers done
+#12 exporting manifest sha256:362df163e58c3fa9ab3d1e9e09b8e366664f3ddcf748b3aa4483152fe9518ea6 done
+#12 exporting config sha256:b0a8bb7ab93b9ceeea56031d711848b375dc1ca2b2bc3f8bb7cab9606eefd8c9 done
+#12 exporting attestation manifest sha256:b8f29c3fa379428ee3c96a7e529d6b1bdf86c3a4213f8fee9de82441e2a8c20c 0.0s done
+#12 exporting manifest list sha256:c41298034e1313e8bd0d01364bddc7f3a7a89d5296bdf34eefb9528cd21110ed
+#12 exporting manifest list sha256:c41298034e1313e8bd0d01364bddc7f3a7a89d5296bdf34eefb9528cd21110ed 0.0s done
+#12 naming to docker.io/library/bench-debian:latest done
+#12 unpacking to docker.io/library/bench-debian:latest done
+#12 DONE 0.1s
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.alpine
+#1 transferring dockerfile: 583B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:22.22.0-alpine
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 63B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 169B done
+#4 DONE 0.0s
+
+#5 [deps 1/4] FROM docker.io/library/node:22.22.0-alpine@sha256:e4bf2a82ad0a4037d28035ae71529873c069b13eb0455466ae0bc13363826e34
+#5 resolve docker.io/library/node:22.22.0-alpine@sha256:e4bf2a82ad0a4037d28035ae71529873c069b13eb0455466ae0bc13363826e34 0.0s done
+#5 DONE 0.0s
+
+#6 [deps 2/4] WORKDIR /app
+#6 CACHED
+
+#7 [deps 3/4] COPY package.json package-lock.json ./
+#7 CACHED
+
+#8 [stage-1 4/5] COPY --chown=node:node package.json server.js ./
+#8 CACHED
+
+#9 [stage-1 3/5] COPY --from=deps --chown=node:node /app/node_modules ./node_modules
+#9 CACHED
+
+#10 [deps 4/4] RUN npm ci --omit=dev && npm cache clean --force
+#10 CACHED
+
+#11 [stage-1 5/5] COPY --chown=node:node test-data/sample.txt /data/sample.txt
+#11 CACHED
+
+#12 exporting to image
+#12 exporting layers done
+#12 exporting manifest sha256:4722a8770ecda587760fb7bf53ea03acd784432a0d6cd684beab10cd1cb14b0e done
+#12 exporting config sha256:866b5ed689bbfad096dc4d3dff1346af79fdff9a022386a0e62c3b2e3b540cfb done
+#12 exporting attestation manifest sha256:23647f5aa971cbfa1b50128857fd04e0c1f472408e00eaec630c70509ff9169b 0.0s done
+#12 exporting manifest list sha256:0d895596f5f35dce6c278fcc7d71169dad147bcfdf7f6e3dfc66b21cd1245ce1
+#12 exporting manifest list sha256:0d895596f5f35dce6c278fcc7d71169dad147bcfdf7f6e3dfc66b21cd1245ce1 0.0s done
+#12 naming to docker.io/library/bench-alpine:latest done
+#12 unpacking to docker.io/library/bench-alpine:latest done
+#12 DONE 0.1s
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.distroless
+#1 transferring dockerfile: 939B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:22.22.0-bookworm-slim
+#2 DONE 0.0s
+
+#3 [internal] load metadata for gcr.io/distroless/nodejs22-debian12:nonroot
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 63B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 169B done
+#5 DONE 0.0s
+
+#6 [deps 1/4] FROM docker.io/library/node:22.22.0-bookworm-slim@sha256:dd9d21971ec4395903fa6143c2b9267d048ae01ca6d3ea96f16cb30df6187d94
+#6 resolve docker.io/library/node:22.22.0-bookworm-slim@sha256:dd9d21971ec4395903fa6143c2b9267d048ae01ca6d3ea96f16cb30df6187d94 0.0s done
+#6 DONE 0.0s
+
+#7 [stage-1 1/5] FROM gcr.io/distroless/nodejs22-debian12:nonroot@sha256:13593b7570658e8477de39e2f4a1dd25db2f836d68a0ba771251572d23bb4f8e
+#7 resolve gcr.io/distroless/nodejs22-debian12:nonroot@sha256:13593b7570658e8477de39e2f4a1dd25db2f836d68a0ba771251572d23bb4f8e 0.0s done
+#7 DONE 0.0s
+
+#8 [stage-1 3/5] COPY --from=deps --chown=nonroot:nonroot /app/node_modules ./node_modules
+#8 CACHED
+
+#9 [deps 4/4] RUN npm ci --omit=dev && npm cache clean --force
+#9 CACHED
+
+#10 [deps 3/4] COPY package.json package-lock.json ./
+#10 CACHED
+
+#11 [stage-1 4/5] COPY --chown=nonroot:nonroot package.json server.js ./
+#11 CACHED
+
+#12 [deps 2/4] WORKDIR /app
+#12 CACHED
+
+#13 [stage-1 2/5] WORKDIR /app
+#13 CACHED
+
+#14 [stage-1 5/5] COPY --chown=nonroot:nonroot test-data/sample.txt /data/sample.txt
+#14 CACHED
+
+#15 exporting to image
+#15 exporting layers done
+#15 exporting manifest sha256:bede1783f5ecae200d522f2e7ea3a72d0e48577ffd3d839b40109621c4686a7d done
+#15 exporting config sha256:637d292895db6f67019d5438c489797657d0202f949e774e19326d5a328e187f done
+#15 exporting attestation manifest sha256:3101de7bc413798ad5c10ea46b35af36fa51eb3375e07f6b108cdbde8e236e2c
+#15 exporting attestation manifest sha256:3101de7bc413798ad5c10ea46b35af36fa51eb3375e07f6b108cdbde8e236e2c 0.0s done
+#15 exporting manifest list sha256:b60b7b3a13623b1d239d9d1b531c9c01c9cb9967e98554408b8d606f4fdb417a 0.0s done
+#15 naming to docker.io/library/bench-distroless:latest done
+#15 unpacking to docker.io/library/bench-distroless:latest done
+#15 DONE 0.1s
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.distroless-debug
+#1 transferring dockerfile: 698B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for gcr.io/distroless/nodejs22-debian12:debug-nonroot
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/node:22.22.0-bookworm-slim
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 63B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 169B done
+#5 DONE 0.0s
+
+#6 [stage-1 1/5] FROM gcr.io/distroless/nodejs22-debian12:debug-nonroot@sha256:7d24bff49abbd0555cf13179181e6420d13ee57634a887b195ee4051a55fc575
+#6 resolve gcr.io/distroless/nodejs22-debian12:debug-nonroot@sha256:7d24bff49abbd0555cf13179181e6420d13ee57634a887b195ee4051a55fc575 0.0s done
+#6 DONE 0.0s
+
+#7 [deps 1/4] FROM docker.io/library/node:22.22.0-bookworm-slim@sha256:dd9d21971ec4395903fa6143c2b9267d048ae01ca6d3ea96f16cb30df6187d94
+#7 resolve docker.io/library/node:22.22.0-bookworm-slim@sha256:dd9d21971ec4395903fa6143c2b9267d048ae01ca6d3ea96f16cb30df6187d94 0.0s done
+#7 DONE 0.0s
+
+#8 [deps 3/4] COPY package.json package-lock.json ./
+#8 CACHED
+
+#9 [stage-1 3/5] COPY --from=deps --chown=nonroot:nonroot /app/node_modules ./node_modules
+#9 CACHED
+
+#10 [stage-1 4/5] COPY --chown=nonroot:nonroot package.json server.js ./
+#10 CACHED
+
+#11 [deps 2/4] WORKDIR /app
+#11 CACHED
+
+#12 [stage-1 2/5] WORKDIR /app
+#12 CACHED
+
+#13 [deps 4/4] RUN npm ci --omit=dev && npm cache clean --force
+#13 CACHED
+
+#14 [stage-1 5/5] COPY --chown=nonroot:nonroot test-data/sample.txt /data/sample.txt
+#14 CACHED
+
+#15 exporting to image
+#15 exporting layers done
+#15 exporting manifest sha256:e3243d9164d550e2709acc4deaaec52671ebebc4694056885f83700f2de83676 done
+#15 exporting config sha256:f12760ae1104a6034accdcbdc15d0840c252dc0426e2b62449f4a7c2e92bf01e done
+#15 exporting attestation manifest sha256:9955be5a09d6c2a17ea970b0b953a32354d0cd6a2ae9c100a33ed4508f2ca644
+#15 exporting attestation manifest sha256:9955be5a09d6c2a17ea970b0b953a32354d0cd6a2ae9c100a33ed4508f2ca644 0.0s done
+#15 exporting manifest list sha256:95b9813b113eb1927b0833d67affa99389ec9f63187830921a4f6168c6c60abd 0.0s done
+#15 naming to docker.io/library/bench-distroless-debug:latest done
+#15 unpacking to docker.io/library/bench-distroless-debug:latest done
+#15 DONE 0.1s
+variant,image_id,size_bytes,node_version_in_image,built_at_utc
+debian,sha256:c41298034e1313e8bd0d01364bddc7f3a7a89d5296bdf34eefb9528cd21110ed,331684209,v22.22.0,2026-10-31T21:19:33Z
+alpine,sha256:0d895596f5f35dce6c278fcc7d71169dad147bcfdf7f6e3dfc66b21cd1245ce1,234609418,v22.22.0,2026-10-31T21:19:35Z
+distroless,sha256:b60b7b3a13623b1d239d9d1b531c9c01c9cb9967e98554408b8d606f4fdb417a,209329853,v22.22.0,2026-10-31T21:19:37Z
+distroless-debug,sha256:95b9813b113eb1927b0833d67affa99389ec9f63187830921a4f6168c6c60abd,211266421,v22.22.0,2026-10-31T21:19:39Z
+PASS /healthz (200)
+PASS /data (200)
+PASS /compute?seed=abc (200)
+PASS /file (200)
+PASS /upstream (200)
+RESULT: PASS
+debian,PASS
+PASS /healthz (200)
+PASS /data (200)
+PASS /compute?seed=abc (200)
+PASS /file (200)
+PASS /upstream (200)
+RESULT: PASS
+alpine,PASS
+PASS /healthz (200)
+PASS /data (200)
+PASS /compute?seed=abc (200)
+PASS /file (200)
+PASS /upstream (200)
+RESULT: PASS
+distroless,PASS
+PASS /healthz (200)
+PASS /data (200)
+PASS /compute?seed=abc (200)
+PASS /file (200)
+PASS /upstream (200)
+RESULT: PASS
+distroless-debug,PASS
+
+variant,files_total,sh,bash,apt,apt-get,apk,dpkg,curl,wget,ps,ls,cat,busybox
+debian,8385,yes,yes,yes,yes,no,yes,no,no,no,yes,yes,no
+alpine,4670,yes,no,no,no,yes,no,no,yes,yes,yes,yes,yes
+distroless,2548,no,no,no,no,no,no,no,no,no,no,no,no
+distroless-debug,2931,yes,no,no,no,no,yes,no,yes,yes,yes,yes,yes
+2026-10-31T22:20:02+01:00       INFO    [vulndb] Need to update DB
+2026-10-31T22:20:02+01:00       INFO    [vulndb] Downloading vulnerability DB...
+2026-10-31T22:20:02+01:00       INFO    [vulndb] Downloading artifact...        repo="mirror.gcr.io/aquasec/trivy-db:2"
+671.25 KiB / 131.13 MiB [>______________________________________________] 0.50% ? p/s ?2.84 MiB / 131.13 MiB [->_______________________________________________] 2.17% ? p/s ?5.09 MiB / 131.13 MiB [->_______________________________________________] 3.88% ? p/s ?7.28 MiB / 131.13 MiB [->_________________________________] 5.55% 11.05 MiB p/s ETA 11s9.56 MiB / 131.13 MiB [-->________________________________] 7.29% 11.05 MiB p/s ETA 11s11.78 MiB / 131.13 MiB [--->______________________________] 8.98% 11.05 MiB p/s ETA 10s14.00 MiB / 131.13 MiB [--->_____________________________] 10.68% 11.06 MiB p/s ETA 10s16.25 MiB / 131.13 MiB [---->____________________________] 12.39% 11.06 MiB p/s ETA 10s18.50 MiB / 131.13 MiB [---->____________________________] 14.11% 11.06 MiB p/s ETA 10s20.72 MiB / 131.13 MiB [----->____________________________] 15.80% 11.07 MiB p/s ETA 9s22.97 MiB / 131.13 MiB [----->____________________________] 17.52% 11.07 MiB p/s ETA 9s25.19 MiB / 131.13 MiB [------>___________________________] 19.21% 11.07 MiB p/s ETA 9s27.37 MiB / 131.13 MiB [------->__________________________] 20.88% 11.07 MiB p/s ETA 9s29.66 MiB / 131.13 MiB [------->__________________________] 22.61% 11.07 MiB p/s ETA 9s31.87 MiB / 131.13 MiB [-------->_________________________] 24.31% 11.07 MiB p/s ETA 8s34.12 MiB / 131.13 MiB [-------->_________________________] 26.02% 11.08 MiB p/s ETA 8s36.31 MiB / 131.13 MiB [--------->________________________] 27.69% 11.08 MiB p/s ETA 8s38.56 MiB / 131.13 MiB [--------->________________________] 29.41% 11.08 MiB p/s ETA 8s40.81 MiB / 131.13 MiB [---------->_______________________] 31.12% 11.08 MiB p/s ETA 8s43.06 MiB / 131.13 MiB [----------->______________________] 32.84% 11.08 MiB p/s ETA 7s45.25 MiB / 131.13 MiB [----------->______________________] 34.51% 11.08 MiB p/s ETA 7s47.53 MiB / 131.13 MiB [------------>_____________________] 36.25% 11.09 MiB p/s ETA 7s49.75 MiB / 131.13 MiB [------------>_____________________] 37.94% 11.09 MiB p/s ETA 7s51.16 MiB / 131.13 MiB [------------->____________________] 39.01% 11.09 MiB p/s ETA 7s52.81 MiB / 131.13 MiB [------------->____________________] 40.27% 10.94 MiB p/s ETA 7s55.03 MiB / 131.13 MiB [-------------->___________________] 41.97% 10.94 MiB p/s ETA 6s57.28 MiB / 131.13 MiB [-------------->___________________] 43.68% 10.94 MiB p/s ETA 6s59.47 MiB / 131.13 MiB [--------------->__________________] 45.35% 10.95 MiB p/s ETA 6s61.75 MiB / 131.13 MiB [---------------->_________________] 47.09% 10.95 MiB p/s ETA 6s63.97 MiB / 131.13 MiB [---------------->_________________] 48.78% 10.95 MiB p/s ETA 6s66.22 MiB / 131.13 MiB [----------------->________________] 50.50% 10.97 MiB p/s ETA 5s68.47 MiB / 131.13 MiB [----------------->________________] 52.21% 10.97 MiB p/s ETA 5s70.69 MiB / 131.13 MiB [------------------>_______________] 53.90% 10.97 MiB p/s ETA 5s72.91 MiB / 131.13 MiB [------------------>_______________] 55.60% 10.98 MiB p/s ETA 5s75.16 MiB / 131.13 MiB [------------------->______________] 57.31% 10.98 MiB p/s ETA 5s77.37 MiB / 131.13 MiB [-------------------->_____________] 59.00% 10.98 MiB p/s ETA 4s79.62 MiB / 131.13 MiB [-------------------->_____________] 60.72% 11.00 MiB p/s ETA 4s81.87 MiB / 131.13 MiB [--------------------->____________] 62.44% 11.00 MiB p/s ETA 4s84.09 MiB / 131.13 MiB [--------------------->____________] 64.13% 11.00 MiB p/s ETA 4s86.31 MiB / 131.13 MiB [---------------------->___________] 65.82% 11.01 MiB p/s ETA 4s88.56 MiB / 131.13 MiB [---------------------->___________] 67.54% 11.01 MiB p/s ETA 3s90.78 MiB / 131.13 MiB [----------------------->__________] 69.23% 11.01 MiB p/s ETA 3s93.03 MiB / 131.13 MiB [------------------------>_________] 70.94% 11.02 MiB p/s ETA 3s95.25 MiB / 131.13 MiB [------------------------>_________] 72.64% 11.02 MiB p/s ETA 3s97.47 MiB / 131.13 MiB [------------------------->________] 74.33% 11.02 MiB p/s ETA 3s99.72 MiB / 131.13 MiB [------------------------->________] 76.04% 11.03 MiB p/s ETA 2s101.94 MiB / 131.13 MiB [------------------------->_______] 77.74% 11.03 MiB p/s ETA 2s104.19 MiB / 131.13 MiB [-------------------------->______] 79.45% 11.03 MiB p/s ETA 2s106.41 MiB / 131.13 MiB [-------------------------->______] 81.14% 11.03 MiB p/s ETA 2s108.41 MiB / 131.13 MiB [--------------------------->_____] 82.67% 11.03 MiB p/s ETA 2s109.53 MiB / 131.13 MiB [--------------------------->_____] 83.53% 11.03 MiB p/s ETA 1s111.78 MiB / 131.13 MiB [---------------------------->____] 85.24% 10.90 MiB p/s ETA 1s114.00 MiB / 131.13 MiB [---------------------------->____] 86.93% 10.90 MiB p/s ETA 1s116.25 MiB / 131.13 MiB [----------------------------->___] 88.65% 10.90 MiB p/s ETA 1s118.44 MiB / 131.13 MiB [----------------------------->___] 90.32% 10.91 MiB p/s ETA 1s120.72 MiB / 131.13 MiB [------------------------------>__] 92.06% 10.91 MiB p/s ETA 0s122.94 MiB / 131.13 MiB [------------------------------>__] 93.75% 10.91 MiB p/s ETA 0s125.16 MiB / 131.13 MiB [------------------------------->_] 95.44% 10.93 MiB p/s ETA 0s127.41 MiB / 131.13 MiB [-------------------------------->] 97.16% 10.93 MiB p/s ETA 0s129.62 MiB / 131.13 MiB [-------------------------------->] 98.85% 10.93 MiB p/s ETA 0s131.13 MiB / 131.13 MiB [------------------------------->] 100.00% 10.87 MiB p/s ETA 0s131.13 MiB / 131.13 MiB [------------------------------->] 100.00% 10.87 MiB p/s ETA 0s131.13 MiB / 131.13 MiB [------------------------------->] 100.00% 10.87 MiB p/s ETA 0s131.13 MiB / 131.13 MiB [------------------------------->] 100.00% 10.17 MiB p/s ETA 0s131.13 MiB / 131.13 MiB [------------------------------->] 100.00% 10.17 MiB p/s ETA 0s131.13 MiB / 131.13 MiB [------------------------------->] 100.00% 10.17 MiB p/s ETA 0s131.13 MiB / 131.13 MiB [-------------------------------->] 100.00% 9.51 MiB p/s ETA 0s131.13 MiB / 131.13 MiB [-------------------------------->] 100.00% 9.51 MiB p/s ETA 0s131.13 MiB / 131.13 MiB [-------------------------------->] 100.00% 9.51 MiB p/s ETA 0s131.13 MiB / 131.13 MiB [-------------------------------->] 100.00% 8.90 MiB p/s ETA 0s131.13 MiB / 131.13 MiB [-------------------------------->] 100.00% 8.90 MiB p/s ETA 0s131.13 MiB / 131.13 MiB [-------------------------------->] 100.00% 8.90 MiB p/s ETA 0s131.13 MiB / 131.13 MiB [-------------------------------->] 100.00% 8.32 MiB p/s ETA 0s131.13 MiB / 131.13 MiB [-------------------------------->] 100.00% 8.32 MiB p/s ETA 0s131.13 MiB / 131.13 MiB [-------------------------------->] 100.00% 8.32 MiB p/s ETA 0s131.13 MiB / 131.13 MiB [-------------------------------->] 100.00% 7.79 MiB p/s ETA 0s131.13 MiB / 131.13 MiB [-------------------------------->] 100.00% 7.79 MiB p/s ETA 0s131.13 MiB / 131.13 MiB [-------------------------------->] 100.00% 7.79 MiB p/s ETA 0s131.13 MiB / 131.13 MiB [-------------------------------->] 100.00% 7.28 MiB p/s ETA 0s131.13 MiB / 131.13 MiB [-------------------------------->] 100.00% 7.28 MiB p/s ETA 0s131.13 MiB / 131.13 MiB [-------------------------------->] 100.00% 7.28 MiB p/s ETA 0s131.13 MiB / 131.13 MiB [-------------------------------->] 100.00% 6.81 MiB p/s ETA 0s131.13 MiB / 131.13 MiB [------------------------------------] 100.00% 8.04 MiB p/s 17s2026-10-31T22:20:19+01:00       INFO    [vulndb] Artifact successfully downloaded     repo="mirror.gcr.io/aquasec/trivy-db:2"
+trivy.db: OK
+metadata.json: OK
+trivy.db: OK
+metadata.json: OK
+2026-10-31T22:20:40+01:00       INFO    [vuln] Vulnerability scanning is enabled
+2026-10-31T22:20:42+01:00       INFO    Detected OS     family="debian" version="12.13"
+2026-10-31T22:20:42+01:00       INFO    [debian] Detecting vulnerabilities...   os_version="12" pkg_num=88
+2026-10-31T22:20:42+01:00       INFO    Number of language-specific files       num=1
+2026-10-31T22:20:42+01:00       INFO    [node-pkg] Detecting vulnerabilities...
+2026-10-31T22:20:42+01:00       WARN    Using severities from other vendors for some vulnerabilities. Read https://trivy.dev/docs/v0.76/guide/scanner/vulnerability#severity-selection for details.
+trivy.db: OK
+metadata.json: OK
+trivy.db: OK
+metadata.json: OK
+2026-10-31T22:20:59+01:00       INFO    [vuln] Vulnerability scanning is enabled
+2026-10-31T22:21:01+01:00       INFO    Detected OS     family="alpine" version="3.23.3"
+2026-10-31T22:21:01+01:00       INFO    [alpine] Detecting vulnerabilities...   os_version="3.23" repository="3.23" pkg_num=18
+2026-10-31T22:21:01+01:00       INFO    Number of language-specific files       num=1
+2026-10-31T22:21:01+01:00       INFO    [node-pkg] Detecting vulnerabilities...
+2026-10-31T22:21:01+01:00       WARN    Using severities from other vendors for some vulnerabilities. Read https://trivy.dev/docs/v0.76/guide/scanner/vulnerability#severity-selection for details.
+trivy.db: OK
+metadata.json: OK
+trivy.db: OK
+metadata.json: OK
+2026-10-31T22:21:16+01:00       INFO    [vuln] Vulnerability scanning is enabled
+2026-10-31T22:21:18+01:00       INFO    Detected OS     family="debian" version="12.13"
+2026-10-31T22:21:18+01:00       INFO    [debian] Detecting vulnerabilities...   os_version="12" pkg_num=10
+2026-10-31T22:21:18+01:00       INFO    Number of language-specific files       num=1
+2026-10-31T22:21:18+01:00       INFO    [node-pkg] Detecting vulnerabilities...
+2026-10-31T22:21:18+01:00       WARN    Using severities from other vendors for some vulnerabilities. Read https://trivy.dev/docs/v0.76/guide/scanner/vulnerability#severity-selection for details.
+trivy.db: OK
+metadata.json: OK
+variant,components_total,components_os,components_npm,vulns_unique_total,os_total,os_critical,os_high,os_medium,os_low,os_unknown,project_total,project_critical,project_high,project_medium,project_low,project_unknown,other_lang_total,other_lang_critical,other_lang_high,other_lang_medium,other_lang_low,other_lang_unknown,unknown_lang_total,unknown_lang_critical,unknown_lang_high,unknown_lang_medium,unknown_lang_low,unknown_lang_unknown
+debian,372,88,283,345,285,6,60,122,91,6,8,0,2,4,2,0,52,2,30,18,2,0,0,0,0,0,0,0
+alpine,302,18,283,133,73,2,15,22,32,2,8,0,2,4,2,0,52,2,30,18,2,0,0,0,0,0,0,0
+distroless,81,10,70,81,73,1,6,36,27,3,8,0,2,4,2,0,0,0,0,0,0,0,0,0,0,0,0,0
+
+alpine: matches_debian=True, missing=0, extra=0
+distroless: matches_debian=True, missing=0, extra=0
+1,alpine,582,1
+1,distroless,614,1
+1,debian,533,1
+2,distroless,576,1
+2,debian,521,1
+2,alpine,563,1
+3,distroless,571,1
+3,debian,514,1
+3,alpine,550,1
+Load test: round=1 variant=alpine
+Load test: round=1 variant=debian
+Load test: round=1 variant=distroless
+Load test: round=2 variant=distroless
+Load test: round=2 variant=debian
+Load test: round=2 variant=alpine
+Load test: round=3 variant=alpine
+Load test: round=3 variant=distroless
+Load test: round=3 variant=debian
+round,variant,status,exit_code
+1,alpine,COMPLETED,0
+1,debian,COMPLETED,0
+1,distroless,COMPLETED,0
+2,distroless,COMPLETED,0
+2,debian,COMPLETED,0
+2,alpine,COMPLETED,0
+3,alpine,COMPLETED,0
+3,distroless,COMPLETED,0
+3,debian,COMPLETED,0
+variant,metric,n_runs,median,q1,q3,min,max
+debian,startup_ms,3,521.0,517.5,527.0,514.0,533.0
+debian,rps,3,356.05,353.9,356.9,351.75,357.75
+debian,p50_ms,3,88.0,87.5,88.5,87.0,89.0
+debian,p99_ms,3,179.0,178.0,179.0,177.0,179.0
+debian,transport_errors,3,0.0,0.0,0.0,0.0,0.0
+debian,non2xx,3,0.0,0.0,0.0,0.0,0.0
+debian,timeouts,3,0.0,0.0,0.0,0.0,0.0
+debian,cpu_mean_pct,3,92.951,92.78,93.422,92.608,93.892
+debian,mem_mean_mib,3,31.082,31.025,31.322,30.967,31.561
+alpine,startup_ms,3,563.0,556.5,572.5,550.0,582.0
+alpine,rps,3,306.36,305.08,308.235,303.8,310.11
+alpine,p50_ms,3,100.0,99.5,100.5,99.0,101.0
+alpine,p99_ms,3,203.0,201.5,203.5,200.0,204.0
+alpine,transport_errors,3,0.0,0.0,0.0,0.0,0.0
+alpine,non2xx,3,0.0,0.0,0.0,0.0,0.0
+alpine,timeouts,3,0.0,0.0,0.0,0.0,0.0
+alpine,cpu_mean_pct,3,92.879,92.366,93.135,91.853,93.391
+alpine,mem_mean_mib,3,30.136,29.924,30.148,29.712,30.16
+distroless,startup_ms,3,576.0,573.5,595.0,571.0,614.0
+distroless,rps,3,357.75,356.85,359.45,355.95,361.15
+distroless,p50_ms,3,87.0,87.0,87.5,87.0,88.0
+distroless,p99_ms,3,176.0,176.0,177.0,176.0,178.0
+distroless,transport_errors,3,0.0,0.0,0.0,0.0,0.0
+distroless,non2xx,3,0.0,0.0,0.0,0.0,0.0
+distroless,timeouts,3,0.0,0.0,0.0,0.0,0.0
+distroless,cpu_mean_pct,3,92.0,91.994,92.234,91.988,92.469
+distroless,mem_mean_mib,3,32.252,32.188,32.318,32.124,32.385
+
+{
+  "counts": {
+    "debian": {
+      "startup_attempts": 3,
+      "startup_failed": 0,
+      "load_attempts": 3,
+      "load_reports": 3
+    },
+    "alpine": {
+      "startup_attempts": 3,
+      "startup_failed": 0,
+      "load_attempts": 3,
+      "load_reports": 3
+    },
+    "distroless": {
+      "startup_attempts": 3,
+      "startup_failed": 0,
+      "load_attempts": 3,
+      "load_reports": 3
+    }
+  },
+  "issues": []
+}
+Pipeline finished. Review perf_quality.json before accepting results.
+Results: /home/lenovo_edison/container-benchmark-check-I2gmpK/replications/validation-01/pilot
+{
+  "counts": {
+    "debian": {
+      "startup_attempts": 3,
+      "startup_failed": 0,
+      "load_attempts": 3,
+      "load_reports": 3
+    },
+    "alpine": {
+      "startup_attempts": 3,
+      "startup_failed": 0,
+      "load_attempts": 3,
+      "load_reports": 3
+    },
+    "distroless": {
+      "startup_attempts": 3,
+      "startup_failed": 0,
+      "load_attempts": 3,
+      "load_reports": 3
+    }
+  },
+  "issues": []
+}
+lenovo_edison@eCodeTech:~/container-benchmark-check-I2gmpK$ 
+lenovo_edison@eCodeTech:~/container-benchmark-check-I2gmpK$ 

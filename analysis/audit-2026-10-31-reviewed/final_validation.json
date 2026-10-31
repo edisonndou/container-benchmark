@@ -1,0 +1,11 @@
+{
+  "audited_commit": "d5342fd275cbf0341427eb208c862f9501501cd2",
+  "inputs_checked": 190,
+  "changed_input_files": [],
+  "broken_local_links": [],
+  "trailing_whitespace": [],
+  "reanalysis_checks_passed": 185,
+  "reanalysis_checks_failed": 2,
+  "application_tests_executed": false,
+  "docker_experiments_executed": false
+}

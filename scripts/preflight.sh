@@ -28,5 +28,9 @@ if docker info >/dev/null 2>&1; then
     docker pull -q "$i" >/dev/null 2>&1 && pass "pulled $i" || fail "could not pull $i (check the tag / network)"
   done
 fi
-"$ROOT/scripts/record_env.sh" >/dev/null 2>&1 && pass "wrote results/environment.md (add 'wsl --version' and Windows version by hand if on WSL2)"
+if bash "$ROOT/scripts/record_env.sh" >/dev/null 2>&1; then
+  pass "wrote $RESULTS/environment.md (add 'wsl --version' and Windows version by hand if on WSL2)"
+else
+  fail "could not record the measurement environment in $RESULTS/environment.md"
+fi
 [ $ok -eq 1 ] && echo -e "\nREADY. Next: bash scripts/run_all.sh pilot" || { echo -e "\nNOT READY: fix the [FAIL] lines above."; exit 1; }

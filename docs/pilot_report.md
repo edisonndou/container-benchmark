@@ -14,7 +14,8 @@ U perfunduan:
 
 Kontrollet e defekteve nuk jane matje te kohes se diagnostikimit:
 shkaqet dhe korrigjimet njiheshin paraprakisht.
-Matjet me operator mbeten per eksperimentin kryesor.
+Plani fillestar parashikonte matje me operator. Ky studim nuk u realizua;
+statusi perfundimtar dokumentohet ne docs/operability_assessment.md.
 
 ## 2. Mjedisi dhe konfigurimi
 
@@ -140,10 +141,16 @@ Studimi kufizohet ne nje aplikacion, nje host dhe WSL2.
 Piloti ka vetem tri perseritje per imazh.
 Vleresimi i perputhshmerise kufizohet te varesite e testuara.
 
-Mbeten:
-- Protokolli dhe nente provat e diagnostikimit me dy persona.
-- Eksperimenti kryesor i nisjes dhe ngarkeses.
-- Analiza perfundimtare, figurat dhe punimi IEEE.
+Lista e punes pas pilotit ishte historike. Statusi i perditesuar:
+- Eksperimenti kryesor eshte perfunduar: 30 nisje dhe 30 prova ngarkese
+  ne results/main/, me issues bosh ne perf_quality.json.
+- Analiza, tabelat dhe figurat gjenden ne analysis/.
+- Nente provat e pavarura te diagnostikimit me dy persona nuk u realizuan.
+  Ato mbeten pune e ardhshme; nuk jane kusht i hapur i vleresimit te zbatuar.
+- Dokumentacioni final dhe prezantimi jane perfunduar nga perdoruesi;
+  skedaret e dorezimit nuk jane verifikuar ne kete kontroll te repos.
+
+Statusi i perbashket dhe lidhjet e evidences: docs/PROJECT_STATUS.md.
 
 ## Statusi perfundimtar i diagnostikimit
 

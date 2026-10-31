@@ -1,3 +1,5 @@
+> Historical planning document. For the completed scope, recorded evidence, current responsibilities, and limitations, see [PROJECT_STATUS.md](PROJECT_STATUS.md) and [CONTRIBUTIONS.md](../CONTRIBUTIONS.md). Original schedules and role suggestions below are retained for provenance.
+
 # Plani i ngjeshur: propozim + implementim + pilot deri më 1 nëntor 2026
 
 **Afati:** e diel, 1 nëntor 2026 (26 tetor–1 nëntor, 7 ditë).

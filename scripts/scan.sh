@@ -2,7 +2,7 @@
 # Scan every variant against the same dedicated Trivy database.
 source "$(dirname "$0")/common.sh"
 
-CACHE="$ROOT/.cache/trivy"
+CACHE="$(realpath -m "${TRIVY_CACHE_DIR:-$ROOT/.cache/trivy}")"
 MANIFEST="$RESULTS/trivy/DB_SHA256SUMS"
 
 mkdir -p "$CACHE" "$RESULTS/sbom" "$RESULTS/trivy"
@@ -15,7 +15,18 @@ for tool in syft trivy sha256sum; do
 done
 
 # Initialize the snapshot only once.
+if [ -f "$MANIFEST" ] && { [ ! -f "$CACHE/db/trivy.db" ] || [ ! -f "$CACHE/db/metadata.json" ]; }; then
+  echo "STOP: recorded Trivy manifest exists, but its database snapshot is missing from $CACHE/db." >&2
+  echo "Restore the matching snapshot, or use new RESULTS_DIR and TRIVY_CACHE_DIR paths for a new replication." >&2
+  exit 1
+fi
+
 if [ ! -f "$MANIFEST" ]; then
+  if [ -e "$CACHE/db" ]; then
+    echo "STOP: database cache already exists without a matching results manifest: $CACHE/db" >&2
+    echo "Choose a new TRIVY_CACHE_DIR to avoid replacing an untracked snapshot." >&2
+    exit 1
+  fi
   trivy --cache-dir "$CACHE" image --download-db-only
 
   (
@@ -56,4 +67,4 @@ for v in "${VARIANTS[@]}"; do
   check_db
 done
 
-python3 "$ROOT/scripts/analyze_scan.py"
+python3 "$ROOT/scripts/analyze_scan.py" "$RESULTS"

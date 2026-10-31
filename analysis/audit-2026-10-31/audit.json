@@ -1,0 +1,1136 @@
+{
+  "audited_commit": "d5342fd275cbf0341427eb208c862f9501501cd2",
+  "node_version": "v22.17.0",
+  "generated_at": "2026-10-31T20:51:25.467Z",
+  "working_tree_at_reanalysis_start": " M CONTRIBUTIONS.md\n M README.md\n M analysis/README.md\n M analysis/scripts/analyze_results.py\n M docs/Plani_deri_1_nentor.md\n M docs/Plani_pas_miratimit.md\n M docs/Plani_pilot.md\n M docs/pilot_report.md\n M docs/proposal.md\n M results/operator_diagnostics/README.txt\n M scripts/analyze_scan.py\n M scripts/common.sh\n M scripts/fault.sh\n M scripts/run_all.sh\n M scripts/scan.sh\n?? analysis/scripts/audit_archived_results.mjs\n?? docs/PROJECT_STATUS.md\n",
+  "checks_passed": 183,
+  "checks_failed": 2,
+  "checks": [
+    {
+      "status": "VERIFIED",
+      "label": "Recorded image runtimes are v22.22.0"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "Four recorded functional PASS results"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "Manifest and lockfile agree on Express 4.21.2"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "Recorded measurement code patch is empty"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "Main workload settings agree"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "Pilot completion precedes main experiment"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "Thirty unique successful startup attempts"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "Thirty unique completed load trials"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "startup: archived order groups one round at a time"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "load: archived order groups one round at a time"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "1_debian: actual measured workload and duration"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "1_debian: completed responses are HTTP 200 without reported request errors"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "1_debian: measured image, non-root, resource limits, and container health"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "1_debian: 120 finite resource samples after ANSI and blank-line removal"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "1_alpine: actual measured workload and duration"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "1_alpine: completed responses are HTTP 200 without reported request errors"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "1_alpine: measured image, non-root, resource limits, and container health"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "1_alpine: 120 finite resource samples after ANSI and blank-line removal"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "1_distroless: actual measured workload and duration"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "1_distroless: completed responses are HTTP 200 without reported request errors"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "1_distroless: measured image, non-root, resource limits, and container health"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "1_distroless: 120 finite resource samples after ANSI and blank-line removal"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "2_debian: actual measured workload and duration"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "2_debian: completed responses are HTTP 200 without reported request errors"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "2_debian: measured image, non-root, resource limits, and container health"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "2_debian: 120 finite resource samples after ANSI and blank-line removal"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "2_distroless: actual measured workload and duration"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "2_distroless: completed responses are HTTP 200 without reported request errors"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "2_distroless: measured image, non-root, resource limits, and container health"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "2_distroless: 120 finite resource samples after ANSI and blank-line removal"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "2_alpine: actual measured workload and duration"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "2_alpine: completed responses are HTTP 200 without reported request errors"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "2_alpine: measured image, non-root, resource limits, and container health"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "2_alpine: 120 finite resource samples after ANSI and blank-line removal"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "3_debian: actual measured workload and duration"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "3_debian: completed responses are HTTP 200 without reported request errors"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "3_debian: measured image, non-root, resource limits, and container health"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "3_debian: 120 finite resource samples after ANSI and blank-line removal"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "3_distroless: actual measured workload and duration"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "3_distroless: completed responses are HTTP 200 without reported request errors"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "3_distroless: measured image, non-root, resource limits, and container health"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "3_distroless: 120 finite resource samples after ANSI and blank-line removal"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "3_alpine: actual measured workload and duration"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "3_alpine: completed responses are HTTP 200 without reported request errors"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "3_alpine: measured image, non-root, resource limits, and container health"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "3_alpine: 120 finite resource samples after ANSI and blank-line removal"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "4_debian: actual measured workload and duration"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "4_debian: completed responses are HTTP 200 without reported request errors"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "4_debian: measured image, non-root, resource limits, and container health"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "4_debian: 120 finite resource samples after ANSI and blank-line removal"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "4_distroless: actual measured workload and duration"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "4_distroless: completed responses are HTTP 200 without reported request errors"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "4_distroless: measured image, non-root, resource limits, and container health"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "4_distroless: 120 finite resource samples after ANSI and blank-line removal"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "4_alpine: actual measured workload and duration"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "4_alpine: completed responses are HTTP 200 without reported request errors"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "4_alpine: measured image, non-root, resource limits, and container health"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "4_alpine: 120 finite resource samples after ANSI and blank-line removal"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "5_alpine: actual measured workload and duration"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "5_alpine: completed responses are HTTP 200 without reported request errors"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "5_alpine: measured image, non-root, resource limits, and container health"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "5_alpine: 120 finite resource samples after ANSI and blank-line removal"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "5_distroless: actual measured workload and duration"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "5_distroless: completed responses are HTTP 200 without reported request errors"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "5_distroless: measured image, non-root, resource limits, and container health"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "5_distroless: 120 finite resource samples after ANSI and blank-line removal"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "5_debian: actual measured workload and duration"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "5_debian: completed responses are HTTP 200 without reported request errors"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "5_debian: measured image, non-root, resource limits, and container health"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "5_debian: 120 finite resource samples after ANSI and blank-line removal"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "6_distroless: actual measured workload and duration"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "6_distroless: completed responses are HTTP 200 without reported request errors"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "6_distroless: measured image, non-root, resource limits, and container health"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "6_distroless: 120 finite resource samples after ANSI and blank-line removal"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "6_alpine: actual measured workload and duration"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "6_alpine: completed responses are HTTP 200 without reported request errors"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "6_alpine: measured image, non-root, resource limits, and container health"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "6_alpine: 120 finite resource samples after ANSI and blank-line removal"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "6_debian: actual measured workload and duration"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "6_debian: completed responses are HTTP 200 without reported request errors"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "6_debian: measured image, non-root, resource limits, and container health"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "6_debian: 120 finite resource samples after ANSI and blank-line removal"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "7_debian: actual measured workload and duration"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "7_debian: completed responses are HTTP 200 without reported request errors"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "7_debian: measured image, non-root, resource limits, and container health"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "7_debian: 120 finite resource samples after ANSI and blank-line removal"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "7_distroless: actual measured workload and duration"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "7_distroless: completed responses are HTTP 200 without reported request errors"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "7_distroless: measured image, non-root, resource limits, and container health"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "7_distroless: 120 finite resource samples after ANSI and blank-line removal"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "7_alpine: actual measured workload and duration"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "7_alpine: completed responses are HTTP 200 without reported request errors"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "7_alpine: measured image, non-root, resource limits, and container health"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "7_alpine: 120 finite resource samples after ANSI and blank-line removal"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "8_debian: actual measured workload and duration"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "8_debian: completed responses are HTTP 200 without reported request errors"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "8_debian: measured image, non-root, resource limits, and container health"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "8_debian: 120 finite resource samples after ANSI and blank-line removal"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "8_alpine: actual measured workload and duration"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "8_alpine: completed responses are HTTP 200 without reported request errors"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "8_alpine: measured image, non-root, resource limits, and container health"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "8_alpine: 120 finite resource samples after ANSI and blank-line removal"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "8_distroless: actual measured workload and duration"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "8_distroless: completed responses are HTTP 200 without reported request errors"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "8_distroless: measured image, non-root, resource limits, and container health"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "8_distroless: 120 finite resource samples after ANSI and blank-line removal"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "9_distroless: actual measured workload and duration"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "9_distroless: completed responses are HTTP 200 without reported request errors"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "9_distroless: measured image, non-root, resource limits, and container health"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "9_distroless: 120 finite resource samples after ANSI and blank-line removal"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "9_debian: actual measured workload and duration"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "9_debian: completed responses are HTTP 200 without reported request errors"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "9_debian: measured image, non-root, resource limits, and container health"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "9_debian: 120 finite resource samples after ANSI and blank-line removal"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "9_alpine: actual measured workload and duration"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "9_alpine: completed responses are HTTP 200 without reported request errors"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "9_alpine: measured image, non-root, resource limits, and container health"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "9_alpine: 120 finite resource samples after ANSI and blank-line removal"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "10_debian: actual measured workload and duration"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "10_debian: completed responses are HTTP 200 without reported request errors"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "10_debian: measured image, non-root, resource limits, and container health"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "10_debian: 120 finite resource samples after ANSI and blank-line removal"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "10_alpine: actual measured workload and duration"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "10_alpine: completed responses are HTTP 200 without reported request errors"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "10_alpine: measured image, non-root, resource limits, and container health"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "10_alpine: 120 finite resource samples after ANSI and blank-line removal"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "10_distroless: actual measured workload and duration"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "10_distroless: completed responses are HTTP 200 without reported request errors"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "10_distroless: measured image, non-root, resource limits, and container health"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "10_distroless: 120 finite resource samples after ANSI and blank-line removal"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "Measured load trials do not overlap and follow the recorded variant order"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "debian/startup_ms: summary matches archive within 0.000501 rounding tolerance"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "debian/rps: summary matches archive within 0.000501 rounding tolerance"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "debian/p50_ms: summary matches archive within 0.000501 rounding tolerance"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "debian/p99_ms: summary matches archive within 0.000501 rounding tolerance"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "debian/transport_errors: summary matches archive within 0.000501 rounding tolerance"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "debian/non2xx: summary matches archive within 0.000501 rounding tolerance"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "debian/timeouts: summary matches archive within 0.000501 rounding tolerance"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "debian/cpu_mean_pct: summary matches archive within 0.000501 rounding tolerance"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "debian/mem_mean_mib: summary matches archive within 0.000501 rounding tolerance"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "alpine/startup_ms: summary matches archive within 0.000501 rounding tolerance"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "alpine/rps: summary matches archive within 0.000501 rounding tolerance"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "alpine/p50_ms: summary matches archive within 0.000501 rounding tolerance"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "alpine/p99_ms: summary matches archive within 0.000501 rounding tolerance"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "alpine/transport_errors: summary matches archive within 0.000501 rounding tolerance"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "alpine/non2xx: summary matches archive within 0.000501 rounding tolerance"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "alpine/timeouts: summary matches archive within 0.000501 rounding tolerance"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "alpine/cpu_mean_pct: summary matches archive within 0.000501 rounding tolerance"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "alpine/mem_mean_mib: summary matches archive within 0.000501 rounding tolerance"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "distroless/startup_ms: summary matches archive within 0.000501 rounding tolerance"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "distroless/rps: summary matches archive within 0.000501 rounding tolerance"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "distroless/p50_ms: summary matches archive within 0.000501 rounding tolerance"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "distroless/p99_ms: summary matches archive within 0.000501 rounding tolerance"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "distroless/transport_errors: summary matches archive within 0.000501 rounding tolerance"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "distroless/non2xx: summary matches archive within 0.000501 rounding tolerance"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "distroless/timeouts: summary matches archive within 0.000501 rounding tolerance"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "distroless/cpu_mean_pct: summary matches archive within 0.000501 rounding tolerance"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "distroless/mem_mean_mib: summary matches archive within 0.000501 rounding tolerance"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "Archived main quality counts match reanalysis"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "debian: scan refers to measured image"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "debian: SBOM configuration digest and scan layer identities agree"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "debian: deduplicated security totals and severities match archive"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "alpine: scan refers to measured image"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "alpine: SBOM configuration digest and scan layer identities agree"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "alpine: deduplicated security totals and severities match archive"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "distroless: scan refers to measured image"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "distroless: SBOM configuration digest and scan layer identities agree"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "distroless: deduplicated security totals and severities match archive"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "All images contain the same 69 application name-version pairs"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "All images share the same seven project finding identities"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "Pilot and main database manifests match byte for byte"
+    },
+    {
+      "status": "FAILED",
+      "label": "Archived database metadata hash matches manifest"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "Original scan log records database checks around each image scan"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "config/debian: archived fault and non-root recovery verified"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "permissions/debian: archived fault and non-root recovery verified"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "connectivity/debian: archived fault and non-root recovery verified"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "config/alpine: archived fault and non-root recovery verified"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "permissions/alpine: archived fault and non-root recovery verified"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "connectivity/alpine: archived fault and non-root recovery verified"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "config/distroless: archived fault and non-root recovery verified"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "permissions/distroless: archived fault and non-root recovery verified"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "connectivity/distroless: archived fault and non-root recovery verified"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "Actual assisted Edison session is separate from the original Donart plan; no measured diagnosis times"
+    },
+    {
+      "status": "FAILED",
+      "label": "All inputs in the previous analysis audit retain their recorded SHA-256 hashes"
+    },
+    {
+      "status": "VERIFIED",
+      "label": "All reanalysis inputs remained unchanged during this audit"
+    }
+  ],
+  "startup_attempts": 30,
+  "load_trials": 30,
+  "resource_samples": 3600,
+  "historical_database_binary_present": false,
+  "prior_hash_mismatches": [
+    "results/main/environment.md",
+    "results/main/metadata/run.txt",
+    "results/main/metadata/completed_utc.txt",
+    "results/main/metadata/tool_versions.txt",
+    "results/main/load/settings.txt",
+    "results/main/metadata/build_info.csv",
+    "results/main/metadata/functional.csv",
+    "results/main/startup.csv",
+    "results/main/load/runs.csv",
+    "results/main/load/ac_1_debian.json",
+    "results/main/load/inspect_1_debian.json",
+    "results/main/load/state_1_debian.txt",
+    "results/main/load/stats_1_debian.csv",
+    "results/main/load/ac_1_alpine.json",
+    "results/main/load/inspect_1_alpine.json",
+    "results/main/load/state_1_alpine.txt",
+    "results/main/load/stats_1_alpine.csv",
+    "results/main/load/ac_1_distroless.json",
+    "results/main/load/inspect_1_distroless.json",
+    "results/main/load/state_1_distroless.txt",
+    "results/main/load/stats_1_distroless.csv",
+    "results/main/load/ac_2_debian.json",
+    "results/main/load/inspect_2_debian.json",
+    "results/main/load/state_2_debian.txt",
+    "results/main/load/stats_2_debian.csv",
+    "results/main/load/ac_2_distroless.json",
+    "results/main/load/inspect_2_distroless.json",
+    "results/main/load/state_2_distroless.txt",
+    "results/main/load/stats_2_distroless.csv",
+    "results/main/load/ac_2_alpine.json",
+    "results/main/load/inspect_2_alpine.json",
+    "results/main/load/state_2_alpine.txt",
+    "results/main/load/stats_2_alpine.csv",
+    "results/main/load/ac_3_debian.json",
+    "results/main/load/inspect_3_debian.json",
+    "results/main/load/state_3_debian.txt",
+    "results/main/load/stats_3_debian.csv",
+    "results/main/load/ac_3_distroless.json",
+    "results/main/load/inspect_3_distroless.json",
+    "results/main/load/state_3_distroless.txt",
+    "results/main/load/stats_3_distroless.csv",
+    "results/main/load/ac_3_alpine.json",
+    "results/main/load/inspect_3_alpine.json",
+    "results/main/load/state_3_alpine.txt",
+    "results/main/load/stats_3_alpine.csv",
+    "results/main/load/ac_4_debian.json",
+    "results/main/load/inspect_4_debian.json",
+    "results/main/load/state_4_debian.txt",
+    "results/main/load/stats_4_debian.csv",
+    "results/main/load/ac_4_distroless.json",
+    "results/main/load/inspect_4_distroless.json",
+    "results/main/load/state_4_distroless.txt",
+    "results/main/load/stats_4_distroless.csv",
+    "results/main/load/ac_4_alpine.json",
+    "results/main/load/inspect_4_alpine.json",
+    "results/main/load/state_4_alpine.txt",
+    "results/main/load/stats_4_alpine.csv",
+    "results/main/load/ac_5_alpine.json",
+    "results/main/load/inspect_5_alpine.json",
+    "results/main/load/state_5_alpine.txt",
+    "results/main/load/stats_5_alpine.csv",
+    "results/main/load/ac_5_distroless.json",
+    "results/main/load/inspect_5_distroless.json",
+    "results/main/load/state_5_distroless.txt",
+    "results/main/load/stats_5_distroless.csv",
+    "results/main/load/ac_5_debian.json",
+    "results/main/load/inspect_5_debian.json",
+    "results/main/load/state_5_debian.txt",
+    "results/main/load/stats_5_debian.csv",
+    "results/main/load/ac_6_distroless.json",
+    "results/main/load/inspect_6_distroless.json",
+    "results/main/load/state_6_distroless.txt",
+    "results/main/load/stats_6_distroless.csv",
+    "results/main/load/ac_6_alpine.json",
+    "results/main/load/inspect_6_alpine.json",
+    "results/main/load/state_6_alpine.txt",
+    "results/main/load/stats_6_alpine.csv",
+    "results/main/load/ac_6_debian.json",
+    "results/main/load/inspect_6_debian.json",
+    "results/main/load/state_6_debian.txt",
+    "results/main/load/stats_6_debian.csv",
+    "results/main/load/ac_7_debian.json",
+    "results/main/load/inspect_7_debian.json",
+    "results/main/load/state_7_debian.txt",
+    "results/main/load/stats_7_debian.csv",
+    "results/main/load/ac_7_distroless.json",
+    "results/main/load/inspect_7_distroless.json",
+    "results/main/load/state_7_distroless.txt",
+    "results/main/load/stats_7_distroless.csv",
+    "results/main/load/ac_7_alpine.json",
+    "results/main/load/inspect_7_alpine.json",
+    "results/main/load/state_7_alpine.txt",
+    "results/main/load/stats_7_alpine.csv",
+    "results/main/load/ac_8_debian.json",
+    "results/main/load/inspect_8_debian.json",
+    "results/main/load/state_8_debian.txt",
+    "results/main/load/stats_8_debian.csv",
+    "results/main/load/ac_8_alpine.json",
+    "results/main/load/inspect_8_alpine.json",
+    "results/main/load/state_8_alpine.txt",
+    "results/main/load/stats_8_alpine.csv",
+    "results/main/load/ac_8_distroless.json",
+    "results/main/load/inspect_8_distroless.json",
+    "results/main/load/state_8_distroless.txt",
+    "results/main/load/stats_8_distroless.csv",
+    "results/main/load/ac_9_distroless.json",
+    "results/main/load/inspect_9_distroless.json",
+    "results/main/load/state_9_distroless.txt",
+    "results/main/load/stats_9_distroless.csv",
+    "results/main/load/ac_9_debian.json",
+    "results/main/load/inspect_9_debian.json",
+    "results/main/load/state_9_debian.txt",
+    "results/main/load/stats_9_debian.csv",
+    "results/main/load/ac_9_alpine.json",
+    "results/main/load/inspect_9_alpine.json",
+    "results/main/load/state_9_alpine.txt",
+    "results/main/load/stats_9_alpine.csv",
+    "results/main/load/ac_10_debian.json",
+    "results/main/load/inspect_10_debian.json",
+    "results/main/load/state_10_debian.txt",
+    "results/main/load/stats_10_debian.csv",
+    "results/main/load/ac_10_alpine.json",
+    "results/main/load/inspect_10_alpine.json",
+    "results/main/load/state_10_alpine.txt",
+    "results/main/load/stats_10_alpine.csv",
+    "results/main/load/ac_10_distroless.json",
+    "results/main/load/inspect_10_distroless.json",
+    "results/main/load/state_10_distroless.txt",
+    "results/main/load/stats_10_distroless.csv",
+    "results/main/perf_quality.json",
+    "results/main/security/sbom/debian.syft.json",
+    "results/main/security/trivy/debian.json",
+    "results/main/security/sbom/alpine.syft.json",
+    "results/main/security/trivy/alpine.json",
+    "results/main/security/sbom/distroless.syft.json",
+    "results/main/security/trivy/distroless.json",
+    "results/main/metadata/tools_present.csv",
+    "results/main/security/trivy/DB_SHA256SUMS",
+    "results/pilot/security/trivy/DB_SHA256SUMS",
+    "results/main/security/trivy/db_metadata.json",
+    "results/main/scan.log",
+    "results/pilot/diagnostics/config_debian/before.json",
+    "results/pilot/diagnostics/config_debian/after.json",
+    "results/pilot/diagnostics/config_debian/before.log",
+    "results/pilot/diagnostics/config_debian/test_after.txt",
+    "results/pilot/diagnostics/permissions_debian/before.json",
+    "results/pilot/diagnostics/permissions_debian/after.json",
+    "results/pilot/diagnostics/permissions_debian/before.log",
+    "results/pilot/diagnostics/permissions_debian/test_after.txt",
+    "results/pilot/diagnostics/permissions_debian/test_before.txt",
+    "results/pilot/diagnostics/connectivity_debian/before.json",
+    "results/pilot/diagnostics/connectivity_debian/after.json",
+    "results/pilot/diagnostics/connectivity_debian/before.log",
+    "results/pilot/diagnostics/connectivity_debian/test_after.txt",
+    "results/pilot/diagnostics/connectivity_debian/test_before.txt",
+    "results/pilot/diagnostics_automated/config_alpine/before.json",
+    "results/pilot/diagnostics_automated/config_alpine/after.json",
+    "results/pilot/diagnostics_automated/config_alpine/before.log",
+    "results/pilot/diagnostics_automated/config_alpine/test_after.txt",
+    "results/pilot/diagnostics_automated/permissions_alpine/before.json",
+    "results/pilot/diagnostics_automated/permissions_alpine/after.json",
+    "results/pilot/diagnostics_automated/permissions_alpine/before.log",
+    "results/pilot/diagnostics_automated/permissions_alpine/test_after.txt",
+    "results/pilot/diagnostics_automated/permissions_alpine/test_before.txt",
+    "results/pilot/diagnostics_automated/connectivity_alpine/before.json",
+    "results/pilot/diagnostics_automated/connectivity_alpine/after.json",
+    "results/pilot/diagnostics_automated/connectivity_alpine/before.log",
+    "results/pilot/diagnostics_automated/connectivity_alpine/test_after.txt",
+    "results/pilot/diagnostics_automated/connectivity_alpine/test_before.txt",
+    "results/pilot/diagnostics_automated/config_distroless/before.json",
+    "results/pilot/diagnostics_automated/config_distroless/after.json",
+    "results/pilot/diagnostics_automated/config_distroless/before.log",
+    "results/pilot/diagnostics_automated/config_distroless/test_after.txt",
+    "results/pilot/diagnostics_automated/permissions_distroless/before.json",
+    "results/pilot/diagnostics_automated/permissions_distroless/after.json",
+    "results/pilot/diagnostics_automated/permissions_distroless/before.log",
+    "results/pilot/diagnostics_automated/permissions_distroless/test_after.txt",
+    "results/pilot/diagnostics_automated/permissions_distroless/test_before.txt",
+    "results/pilot/diagnostics_automated/connectivity_distroless/before.json",
+    "results/pilot/diagnostics_automated/connectivity_distroless/after.json",
+    "results/pilot/diagnostics_automated/connectivity_distroless/before.log",
+    "results/pilot/diagnostics_automated/connectivity_distroless/test_after.txt",
+    "results/pilot/diagnostics_automated/connectivity_distroless/test_before.txt",
+    "results/operator_diagnostics/session_status.json",
+    "results/operator_diagnostics/trials/trial01/classification.json",
+    "docs/operability_assessment.md"
+  ],
+  "total_completed_http_200": 486585,
+  "input_sha256": {
+    "results/main/metadata/build_info.csv": "93cfe02a32d55ff7963d50ceb385e930f138d277a6ffcd70d260f2652757bcea",
+    "results/main/metadata/functional.csv": "632f716edba8cdacc0ef0e563adddf06c776aafdd5b25fafcad93551c3a31806",
+    "app/package.json": "adec090a26a28fdf26c597773b081eef9799dcff6301fb47f09593180aa4800a",
+    "app/package-lock.json": "170f0747c9daf8896436020e492af2feabc16ce778b59c2f21c47e47e5403570",
+    "results/main/metadata/code_changes.patch": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/main/load/settings.txt": "055c9de37b4713055a84cbdd9a6cb950a1dcc666a13e4bce057adff0b3782edd",
+    "results/pilot/metadata/completed_utc.txt": "a1be75dd46462bdc32d04139b97aa8e17d9e02caa09399f34c24450d99a75d52",
+    "results/main/metadata/run.txt": "054300e9d531f8613cf43139338ae6631d878e763154efae10ab519de1e6eae0",
+    "results/main/startup.csv": "2163a472a38aafbb7bd489547b49d9f3373cac014fd4af6a3acbaf0272125417",
+    "results/main/load/runs.csv": "8d22ffc833b4874e389c81c2d305d8cf4c0f42f8907f7b4a0da7e97dc11c9628",
+    "results/main/load/ac_1_debian.json": "063180b704c30d637ac2c0927c99763683eb6737f62cd3f0f3e1496bcd665972",
+    "results/main/load/inspect_1_debian.json": "8b555598cf67d70c15fb2ef5cefc93a2b5542624f64928ed013aae5438e7e247",
+    "results/main/load/state_1_debian.txt": "f22984e0978a3b0ff686af9e01f1e5b6187670e2bdff3f5041f8de421673b1d1",
+    "results/main/load/stats_1_debian.csv": "5cf5f2cff73fb240bf0fa46f0596821051b75685a0c3d8be442844a4cd56ae24",
+    "results/main/load/ac_1_alpine.json": "a594c4ef293fb8c08bba565e6c69ed6ac6ca119d9187735f87863102a94eb23a",
+    "results/main/load/inspect_1_alpine.json": "a359609eed3947c2321bf0f57b718f29c338967d7d4c2f6085b31884b7e03693",
+    "results/main/load/state_1_alpine.txt": "f22984e0978a3b0ff686af9e01f1e5b6187670e2bdff3f5041f8de421673b1d1",
+    "results/main/load/stats_1_alpine.csv": "609330773f2ce3013cd4d9ef5ee11c20f9742e28259aa77b6dd9b7774f7d7112",
+    "results/main/load/ac_1_distroless.json": "59bbcc318f4d4c5b974d55114a369294f39e56e32637f87e9b9055be54a12192",
+    "results/main/load/inspect_1_distroless.json": "7ac8373c2bbbd07701aa8531ca767cbfe6294d9ea18c74cfc644a29368d87900",
+    "results/main/load/state_1_distroless.txt": "f22984e0978a3b0ff686af9e01f1e5b6187670e2bdff3f5041f8de421673b1d1",
+    "results/main/load/stats_1_distroless.csv": "cbc249570abd66b6666c2242373cc520dffe8163eb8db1c71801afd175e83ee0",
+    "results/main/load/ac_2_debian.json": "6d7b42a7204308f2a480dfbd300f425d9d2a9d2e5b6da90ce428c08db6c9b140",
+    "results/main/load/inspect_2_debian.json": "0b5ddc66fbc5b0e80e127d3cb767fa290fd5415e1bbf13520196737614b77ab1",
+    "results/main/load/state_2_debian.txt": "f22984e0978a3b0ff686af9e01f1e5b6187670e2bdff3f5041f8de421673b1d1",
+    "results/main/load/stats_2_debian.csv": "88b4fc93f348dd9c1546b07f571e0460b7608be8700b9fd304b2c45d699304c0",
+    "results/main/load/ac_2_distroless.json": "4dd9c1aba31ebcab1a4e1f6f14a73d6947eab121f9a2ca6d95fb5dd45975f453",
+    "results/main/load/inspect_2_distroless.json": "e190873cf2d0835e3f0cb1e11efa08ca7c74cdd06c80317245f236decafc6be5",
+    "results/main/load/state_2_distroless.txt": "f22984e0978a3b0ff686af9e01f1e5b6187670e2bdff3f5041f8de421673b1d1",
+    "results/main/load/stats_2_distroless.csv": "b3aa0889c4686c8c8b1c4bd2a1e23b35545b436bee99d187c4be0d795d27621b",
+    "results/main/load/ac_2_alpine.json": "48c0ef51cde82f78b013b90228579d85aeb65e689fafa27df2083b7b091220aa",
+    "results/main/load/inspect_2_alpine.json": "0c97ed0fa0a0f4c4833acf0bacd8af1dfa3e7c619c2f777777f8b36d9b8161cf",
+    "results/main/load/state_2_alpine.txt": "f22984e0978a3b0ff686af9e01f1e5b6187670e2bdff3f5041f8de421673b1d1",
+    "results/main/load/stats_2_alpine.csv": "4f8e1da8f950eca486accca329fab2373c02914a2e2e155fc94db6de6d87e2ed",
+    "results/main/load/ac_3_debian.json": "343b135d4f377d81371e7528e49f353dec71cf64b6ec4c1d683195bbed9737be",
+    "results/main/load/inspect_3_debian.json": "189f4bd6a8822149420fc5f5715f8815878c5452332d71134dc840619abeac28",
+    "results/main/load/state_3_debian.txt": "f22984e0978a3b0ff686af9e01f1e5b6187670e2bdff3f5041f8de421673b1d1",
+    "results/main/load/stats_3_debian.csv": "4552158c9d5254ba489a934580d02f80586b885cc8a5c2875afe35ede73e3fb3",
+    "results/main/load/ac_3_distroless.json": "67d20f6ec3dd8ec56d92cac6183e12450e9e368e5fe69cf1c056d3fb5e9d2ae9",
+    "results/main/load/inspect_3_distroless.json": "a105198aa17f8c02e3f679fc43f873f8e2fe7f4edc6ca36f5f11970cb67e2b11",
+    "results/main/load/state_3_distroless.txt": "f22984e0978a3b0ff686af9e01f1e5b6187670e2bdff3f5041f8de421673b1d1",
+    "results/main/load/stats_3_distroless.csv": "8564e9d560cd81a674c6fd5e81b4718835912bcbc614c5be67024dbc730c0332",
+    "results/main/load/ac_3_alpine.json": "ab8ceea271f8c4a005233b4e87e496258077a4c50e11a89bfe4ced2d3ce3d001",
+    "results/main/load/inspect_3_alpine.json": "fd9c9de47e651cd489c2a7fb4926709c071613c6ca44b38d13a635964bcd4bb2",
+    "results/main/load/state_3_alpine.txt": "f22984e0978a3b0ff686af9e01f1e5b6187670e2bdff3f5041f8de421673b1d1",
+    "results/main/load/stats_3_alpine.csv": "e0161c7f605b2dcc5928bb0161e03fc2119f7f0769e9f4691431458db1311316",
+    "results/main/load/ac_4_debian.json": "1be45947c5ccbb74d6200aaa4f1378d69f8a8a3b5b3026eec9acc8351a1858ca",
+    "results/main/load/inspect_4_debian.json": "347188bb5a39053b85279433664c15fbf540d8980f8d2ba2983057ac527e41fd",
+    "results/main/load/state_4_debian.txt": "f22984e0978a3b0ff686af9e01f1e5b6187670e2bdff3f5041f8de421673b1d1",
+    "results/main/load/stats_4_debian.csv": "66f823fff44d3a3a358d95af377c4274ae414206f34ba4ab5404e7ea56fd3319",
+    "results/main/load/ac_4_distroless.json": "bdbf20e8485b7ab14d5c0fa2f4a7c79db5757471077d76ceff0a9a918eb96d37",
+    "results/main/load/inspect_4_distroless.json": "6278ca3bf7fc8d6a194fc9dc90d27107563b482839c07580030be4eb2eda54fd",
+    "results/main/load/state_4_distroless.txt": "f22984e0978a3b0ff686af9e01f1e5b6187670e2bdff3f5041f8de421673b1d1",
+    "results/main/load/stats_4_distroless.csv": "0fe5de29f97009f0e476cea2e69e043672525ea8241bf17f33f17c7e3624734f",
+    "results/main/load/ac_4_alpine.json": "648b8c3a7e09cfcc0ab787f665626c442246e01ccafac29a494d567284326394",
+    "results/main/load/inspect_4_alpine.json": "d0911bc9eaae75048fff8dfd53f9bc104a43e10d0be3d79073e371ea4bfd0f84",
+    "results/main/load/state_4_alpine.txt": "f22984e0978a3b0ff686af9e01f1e5b6187670e2bdff3f5041f8de421673b1d1",
+    "results/main/load/stats_4_alpine.csv": "081a452fa22412b1229bea54a6f00d7af7203927db0f98f9ea617827a94f0c6a",
+    "results/main/load/ac_5_alpine.json": "36fb331d716b05a7cc7c745a63c4375b9526cfead11ad41a47e2013311808013",
+    "results/main/load/inspect_5_alpine.json": "e1d2cd21dfe614c83ada88ffd341d63e4caaf75b81948de6c2661b4877ccbee1",
+    "results/main/load/state_5_alpine.txt": "f22984e0978a3b0ff686af9e01f1e5b6187670e2bdff3f5041f8de421673b1d1",
+    "results/main/load/stats_5_alpine.csv": "54f53b6f7d214bb229af956a7b833ad67fcf9c923bc99fa095ea65891aaa522a",
+    "results/main/load/ac_5_distroless.json": "92118e6385e243d6062b0bd21a0eb3c9e3dc0041d52f13a64fdc3079c238175a",
+    "results/main/load/inspect_5_distroless.json": "358f400f6eed05a5b97d592e9e75d84b65be885507dec84d7053d40322be3847",
+    "results/main/load/state_5_distroless.txt": "f22984e0978a3b0ff686af9e01f1e5b6187670e2bdff3f5041f8de421673b1d1",
+    "results/main/load/stats_5_distroless.csv": "f8204065ed5f17a3ab704aad3f21b4ee3a0f5f2f9fc1e5c45157f963d9ec5cf9",
+    "results/main/load/ac_5_debian.json": "2bac1929af035f514b8bf3f9082db64a92c69059848d0c0226e288d435a2abb3",
+    "results/main/load/inspect_5_debian.json": "d88b0b339aa61a5e6ff6db7ba4e5d018484ddcdaddabb459e93f94f28f66d677",
+    "results/main/load/state_5_debian.txt": "f22984e0978a3b0ff686af9e01f1e5b6187670e2bdff3f5041f8de421673b1d1",
+    "results/main/load/stats_5_debian.csv": "d7e0979dc47aa9530c080eb012199adf6a9a83049b0d47b604ce1de8a427ef04",
+    "results/main/load/ac_6_distroless.json": "0d1a9910991c9968e73d8210e1587bce78bc2249b30bcc2c00f499ac2aa0bc29",
+    "results/main/load/inspect_6_distroless.json": "76dfef34529cca5e76da5b2ab7fc45aa458eb537184c1c1a2ea08ce3aeed7e6f",
+    "results/main/load/state_6_distroless.txt": "f22984e0978a3b0ff686af9e01f1e5b6187670e2bdff3f5041f8de421673b1d1",
+    "results/main/load/stats_6_distroless.csv": "feb42280c5adafa49be0eefd941ee3b046ca401e834e09c90dd4764343c9affa",
+    "results/main/load/ac_6_alpine.json": "2edc40e76ba9aa65a25351d89597cfb20f84c09b86f46f5cef90476b14b1b220",
+    "results/main/load/inspect_6_alpine.json": "5dfcbe6b3198c83b5e1e6e2a9b07b85cf9001765f4992ecc052df06f02e477ee",
+    "results/main/load/state_6_alpine.txt": "f22984e0978a3b0ff686af9e01f1e5b6187670e2bdff3f5041f8de421673b1d1",
+    "results/main/load/stats_6_alpine.csv": "4c55cd3a42df8985db58ab0e7f49928ffb81bac1ad4071c1855c62b18ff9bd17",
+    "results/main/load/ac_6_debian.json": "26a05bbf18cc777e032ee0922926f0f1d84e8cff3a400438a84878bac018343a",
+    "results/main/load/inspect_6_debian.json": "cb9f3e007c830d4e3752cd0535284e83630fb9e05ed8cbf87b6595bb7d2d58da",
+    "results/main/load/state_6_debian.txt": "f22984e0978a3b0ff686af9e01f1e5b6187670e2bdff3f5041f8de421673b1d1",
+    "results/main/load/stats_6_debian.csv": "217f8fc19438859189c6f310c6d3382cc419d0057c18f65c3d9f8dd7acdc5656",
+    "results/main/load/ac_7_debian.json": "e07e02161274754faa00b0ad6b8eb1bb5235ab53bdc7777da5432f3887b0f2a8",
+    "results/main/load/inspect_7_debian.json": "07225025369a2f309a28b3e4f2c9d83f304207e3b64aad31e98d36cc51205800",
+    "results/main/load/state_7_debian.txt": "f22984e0978a3b0ff686af9e01f1e5b6187670e2bdff3f5041f8de421673b1d1",
+    "results/main/load/stats_7_debian.csv": "87db647d1a7452d83fcdd287791c315c7203222d7608c54e155e5a350e8fce58",
+    "results/main/load/ac_7_distroless.json": "7ba332532c48a3eba4af005c7beee6713610cca81cd5898040b9b03ecd3fbda5",
+    "results/main/load/inspect_7_distroless.json": "ef1f40458dbbe0a7fb7d209a0bf330f34430163212bae6a6930bc60769ef5854",
+    "results/main/load/state_7_distroless.txt": "f22984e0978a3b0ff686af9e01f1e5b6187670e2bdff3f5041f8de421673b1d1",
+    "results/main/load/stats_7_distroless.csv": "2e77f1f26ecd9b5924ab72026a29919e31bdc6f47c09ad7f9be3acbd2f7135ea",
+    "results/main/load/ac_7_alpine.json": "3d5859ac60df0380486aff056f053f278fd555c259297b6f7217f55f16553e5c",
+    "results/main/load/inspect_7_alpine.json": "adb6baf941022d96cc037772bbc8b010ad372868b0709f81554ac21179aadb20",
+    "results/main/load/state_7_alpine.txt": "f22984e0978a3b0ff686af9e01f1e5b6187670e2bdff3f5041f8de421673b1d1",
+    "results/main/load/stats_7_alpine.csv": "36f4e6a9bf03c2efd03901d5b0731b5326cc90fd0e6f8640ccadbedf487ab90a",
+    "results/main/load/ac_8_debian.json": "e67dc64d87fb64144783413c28f8fa29c45a0491bcb3a549decfd9a90ac43d3e",
+    "results/main/load/inspect_8_debian.json": "9ab8f370ff01b5cc8b1da49bc0a1744cf8c3677a79c3e0dcfa4c6a81beca083b",
+    "results/main/load/state_8_debian.txt": "f22984e0978a3b0ff686af9e01f1e5b6187670e2bdff3f5041f8de421673b1d1",
+    "results/main/load/stats_8_debian.csv": "77d1ff25f81ae60123b4a1828c1b2bb23cd2b5e1d9b346693fcbff1d55e6c30c",
+    "results/main/load/ac_8_alpine.json": "013592e847166fdd5721f186d8d643e013e7478dda3e15a10b08d97a90879b85",
+    "results/main/load/inspect_8_alpine.json": "08b64a3760ae6fc55bd11b79272c8b5c3ecbe2d1caccc85c32e19b4a2f2f3065",
+    "results/main/load/state_8_alpine.txt": "f22984e0978a3b0ff686af9e01f1e5b6187670e2bdff3f5041f8de421673b1d1",
+    "results/main/load/stats_8_alpine.csv": "7b27f341064335e3c8e459101e1d33639e3f45e0ccfa11d3459c20159f56384d",
+    "results/main/load/ac_8_distroless.json": "b78668acf14a43c66aa5f42c5d00aa4dc7571bfecd7939ab13411a52ac2ac56d",
+    "results/main/load/inspect_8_distroless.json": "90b02ba0bec15ee8e2fe86112632b041222d7be261e0111e2c11dd689d4d6881",
+    "results/main/load/state_8_distroless.txt": "f22984e0978a3b0ff686af9e01f1e5b6187670e2bdff3f5041f8de421673b1d1",
+    "results/main/load/stats_8_distroless.csv": "6524e1f2aca74af77ce9228b4bb9eed5a58ba8d3c2be5aa43ef0d2c303724063",
+    "results/main/load/ac_9_distroless.json": "5805244c9ec15bcb0780a22b226a2eb7a78699e5d37f77e171e7903ded2dd2b3",
+    "results/main/load/inspect_9_distroless.json": "a7c401423f454796dd2661f2b3c02c28a4d81ae42a875fca87a91787dca0a83f",
+    "results/main/load/state_9_distroless.txt": "f22984e0978a3b0ff686af9e01f1e5b6187670e2bdff3f5041f8de421673b1d1",
+    "results/main/load/stats_9_distroless.csv": "5553ea9a33f7652ac434ca560ffefcad3c49e2e5a31f2cb566086f51869d0016",
+    "results/main/load/ac_9_debian.json": "5f638094152b960b3f4a2e0327e5d617a0d6fe02bd99a3b30a16dbd8466a1f0d",
+    "results/main/load/inspect_9_debian.json": "33bc47877acda94eff00ef6cffd2c70337cc522c1d3ecca6fa87adc1518d53ab",
+    "results/main/load/state_9_debian.txt": "f22984e0978a3b0ff686af9e01f1e5b6187670e2bdff3f5041f8de421673b1d1",
+    "results/main/load/stats_9_debian.csv": "60d313b590691ca22a9b2a1d1195d7329145ac060c8dc06b5bc0e8406b242abf",
+    "results/main/load/ac_9_alpine.json": "fea5dd9629bf3cae0c705a9084a527318394f099de562d5ab46007576e240fc7",
+    "results/main/load/inspect_9_alpine.json": "4badd2c13ddd4b0d54bd22158ddf7b6694f4fe99d5abbcb582d34f6131febe2d",
+    "results/main/load/state_9_alpine.txt": "f22984e0978a3b0ff686af9e01f1e5b6187670e2bdff3f5041f8de421673b1d1",
+    "results/main/load/stats_9_alpine.csv": "574a7ad7df137a1cb7b7339f6fa93879ba4ae13c31e758b6cf4f7efbbd0cdbca",
+    "results/main/load/ac_10_debian.json": "5b0560814b800f777da83e0f11b9969283a7410ce4b2305f60582de79065cf7d",
+    "results/main/load/inspect_10_debian.json": "1604f9a62153c69429eb46a4f9430621c4123b7427147dbd74907d97090fee3b",
+    "results/main/load/state_10_debian.txt": "f22984e0978a3b0ff686af9e01f1e5b6187670e2bdff3f5041f8de421673b1d1",
+    "results/main/load/stats_10_debian.csv": "dc3160657ad35f3245a0621e830c177040fb1239dbf65b54cd54f14888799e16",
+    "results/main/load/ac_10_alpine.json": "cbde0b40797b1ab64f96318a40b9410923a85990bdb94c2efbd6e42a39a03207",
+    "results/main/load/inspect_10_alpine.json": "04c73d042ec49e4b1ea0bcb67361fc1dc696cfdfd5f70b2de6e0f269e0d1a9ec",
+    "results/main/load/state_10_alpine.txt": "f22984e0978a3b0ff686af9e01f1e5b6187670e2bdff3f5041f8de421673b1d1",
+    "results/main/load/stats_10_alpine.csv": "84d78026212d9881fa3091877cf11e1c9761494d2e92361d2abf0ddbdd49b65b",
+    "results/main/load/ac_10_distroless.json": "a4290908cb1493b900a9644d8bb999982bac86e97620eccfcd049f0d372ba04c",
+    "results/main/load/inspect_10_distroless.json": "eb1f519f13af8724e765c6f142a2d9b907b85e4e98645c396f916564ba200bb7",
+    "results/main/load/state_10_distroless.txt": "f22984e0978a3b0ff686af9e01f1e5b6187670e2bdff3f5041f8de421673b1d1",
+    "results/main/load/stats_10_distroless.csv": "4b899c1fdf79dd80a5db178a2f8961874b69241d40f70e4f23d990eaa3aaa086",
+    "results/main/perf_summary.csv": "f0744b8fdae6330ca205d322192d9534562c2eb57f496d1ffa631c1d4df95c78",
+    "results/main/perf_quality.json": "0bdf973078bc2e70b86e0ecd5fc8f3628297563276480816d12544bbf14fc240",
+    "results/main/security/security_summary.csv": "0efcc71ff1ea6626fc7d6394f9ce0d8a1eea68f5a9e9be7a8aad4f310e9bfac0",
+    "results/main/security/sbom/debian.syft.json": "e00691daea6c6107682612f0146018cf247800c8930ec861444a174ee329db8c",
+    "results/main/security/trivy/debian.json": "5917d216cdb32e02a5b32b9522cd4277d4f81e10e4f85a64bb1a542e62b0251f",
+    "results/main/security/sbom/alpine.syft.json": "6cc1156370f0151c5981489c5d610dcc133f65d8503ab5b54523c01005315acd",
+    "results/main/security/trivy/alpine.json": "992042bf9f665b8db412f5fa2db9ef3d67df4e53149cac934745011750a43ebe",
+    "results/main/security/sbom/distroless.syft.json": "828814e19cbff29d8e4c67453bcc571377e20b619ee8c2f27044a655375e8213",
+    "results/main/security/trivy/distroless.json": "9d674d306bb913db365c7ba240bcdef92d0d9ccbd25fadc7429a9c0a696439cc",
+    "results/main/security/trivy/DB_SHA256SUMS": "3d71978cf1c3798b8b1e71aaf434a5cd41d13e07c5288e9e0a697116ea51f77b",
+    "results/pilot/security/trivy/DB_SHA256SUMS": "3d71978cf1c3798b8b1e71aaf434a5cd41d13e07c5288e9e0a697116ea51f77b",
+    "results/main/security/trivy/db_metadata.json": "bf44fb6e0b7b6939aa4f9634a884cda0ba7b0d4cd30a7d1235d1240c1944e4f7",
+    "results/main/scan.log": "3b15787c43ee859f8eff3585eae2922d2307fb9fbebc9ad30935daa164e65185",
+    "results/pilot/diagnostics/config_debian/before.json": "45dea012358e0cff1439b353d59b20c8b8915cdb19362dd3d3debd389989726c",
+    "results/pilot/diagnostics/config_debian/after.json": "ee85485e59259c0d8e084a17cb2ee428d82d4b3fd6cf14d033a66e2bcf39d1dc",
+    "results/pilot/diagnostics/config_debian/before.log": "4fe4217cb67b30a7e679a32553b222b02b3aaa4f34091a8d13a4ca00cb7c4064",
+    "results/pilot/diagnostics/config_debian/test_after.txt": "9b163a57ee046906d1d8693809f167a8885eb1f5e455639026fe351b02c37b09",
+    "results/pilot/diagnostics/permissions_debian/before.json": "a4f3b16e4594c37194f8151fb400817b9fc188780fd19528302f67cf6a15954c",
+    "results/pilot/diagnostics/permissions_debian/after.json": "a4f3b16e4594c37194f8151fb400817b9fc188780fd19528302f67cf6a15954c",
+    "results/pilot/diagnostics/permissions_debian/before.log": "853ca07beddc027c0a63c248c4efddb8b58889a5909e50beeaa5c13a28a61afe",
+    "results/pilot/diagnostics/permissions_debian/test_before.txt": "83d64fd73c727634c124960653120f5b7ed2f73c955817420eedc9ba6ddcb8fe",
+    "results/pilot/diagnostics/permissions_debian/test_after.txt": "9b163a57ee046906d1d8693809f167a8885eb1f5e455639026fe351b02c37b09",
+    "results/pilot/diagnostics/connectivity_debian/before.json": "3a0820937ae63e270b5abcae34898d33e0cb51c2c91b320af549ee4968d515ae",
+    "results/pilot/diagnostics/connectivity_debian/after.json": "063d50b2e4ebc527f2a7a6a92cfce17d95d169d4eeaf3c922ccf2cf8b67e5d4c",
+    "results/pilot/diagnostics/connectivity_debian/before.log": "a8d0523c8f890849b169ef9328e9992199a7ad0ed0a329d10d5f15a49b47e48f",
+    "results/pilot/diagnostics/connectivity_debian/test_before.txt": "033d65d8ae31bfbb931528b66645519911d5f3b598e61b835fde17b396bf5aa0",
+    "results/pilot/diagnostics/connectivity_debian/test_after.txt": "9b163a57ee046906d1d8693809f167a8885eb1f5e455639026fe351b02c37b09",
+    "results/pilot/diagnostics_automated/config_alpine/before.json": "3a47ebe2107eed75f3188ab8d43e6b65f4cf73d859cb79cea02376d114b05446",
+    "results/pilot/diagnostics_automated/config_alpine/after.json": "6d1a2b6bba6833c850433899b0f4b9f5876507761e3855bb0289e46d6c909c84",
+    "results/pilot/diagnostics_automated/config_alpine/before.log": "4fe4217cb67b30a7e679a32553b222b02b3aaa4f34091a8d13a4ca00cb7c4064",
+    "results/pilot/diagnostics_automated/config_alpine/test_after.txt": "9b163a57ee046906d1d8693809f167a8885eb1f5e455639026fe351b02c37b09",
+    "results/pilot/diagnostics_automated/permissions_alpine/before.json": "03291bb6c4a59988b338f2cbc7ffd4e36e74e2b7908b52f7673e05dc521b40ab",
+    "results/pilot/diagnostics_automated/permissions_alpine/after.json": "03291bb6c4a59988b338f2cbc7ffd4e36e74e2b7908b52f7673e05dc521b40ab",
+    "results/pilot/diagnostics_automated/permissions_alpine/before.log": "e783aab001fbc9eda8409eafe1d49afceba257fbe37c1b2661373fd58362b8d3",
+    "results/pilot/diagnostics_automated/permissions_alpine/test_before.txt": "83d64fd73c727634c124960653120f5b7ed2f73c955817420eedc9ba6ddcb8fe",
+    "results/pilot/diagnostics_automated/permissions_alpine/test_after.txt": "9b163a57ee046906d1d8693809f167a8885eb1f5e455639026fe351b02c37b09",
+    "results/pilot/diagnostics_automated/connectivity_alpine/before.json": "ab96f0f8e1536a856336d9a668c21827ef80a9fe990ccf197edd7601baed4500",
+    "results/pilot/diagnostics_automated/connectivity_alpine/after.json": "72e70b06aedadeda631a14c380cac1bd911c8b07aabd5dc8cf7c9060f269699c",
+    "results/pilot/diagnostics_automated/connectivity_alpine/before.log": "a8d0523c8f890849b169ef9328e9992199a7ad0ed0a329d10d5f15a49b47e48f",
+    "results/pilot/diagnostics_automated/connectivity_alpine/test_before.txt": "033d65d8ae31bfbb931528b66645519911d5f3b598e61b835fde17b396bf5aa0",
+    "results/pilot/diagnostics_automated/connectivity_alpine/test_after.txt": "9b163a57ee046906d1d8693809f167a8885eb1f5e455639026fe351b02c37b09",
+    "results/pilot/diagnostics_automated/config_distroless/before.json": "b391a3cf2d5d824e3315a7995d0e082541cf627d9b7e7b6dade2e90b93cdc2fa",
+    "results/pilot/diagnostics_automated/config_distroless/after.json": "d08cbd8bd2a2ed108c965f96beff7db676cdb921fb192d3e809cb10313e7f339",
+    "results/pilot/diagnostics_automated/config_distroless/before.log": "4fe4217cb67b30a7e679a32553b222b02b3aaa4f34091a8d13a4ca00cb7c4064",
+    "results/pilot/diagnostics_automated/config_distroless/test_after.txt": "9b163a57ee046906d1d8693809f167a8885eb1f5e455639026fe351b02c37b09",
+    "results/pilot/diagnostics_automated/permissions_distroless/before.json": "fec22a4fa1b1120387a88646cb772fb9c1702854bc4e0a85fb79259ea7e2efa9",
+    "results/pilot/diagnostics_automated/permissions_distroless/after.json": "fec22a4fa1b1120387a88646cb772fb9c1702854bc4e0a85fb79259ea7e2efa9",
+    "results/pilot/diagnostics_automated/permissions_distroless/before.log": "e783aab001fbc9eda8409eafe1d49afceba257fbe37c1b2661373fd58362b8d3",
+    "results/pilot/diagnostics_automated/permissions_distroless/test_before.txt": "83d64fd73c727634c124960653120f5b7ed2f73c955817420eedc9ba6ddcb8fe",
+    "results/pilot/diagnostics_automated/permissions_distroless/test_after.txt": "9b163a57ee046906d1d8693809f167a8885eb1f5e455639026fe351b02c37b09",
+    "results/pilot/diagnostics_automated/connectivity_distroless/before.json": "205414a75ca1290783e6683d3728db373e6ae575546faecf4b627f2330a29744",
+    "results/pilot/diagnostics_automated/connectivity_distroless/after.json": "02ff6e39a2756d142e72f73b5674d2902f1a7b48e7658004131f516bcca79333",
+    "results/pilot/diagnostics_automated/connectivity_distroless/before.log": "a8d0523c8f890849b169ef9328e9992199a7ad0ed0a329d10d5f15a49b47e48f",
+    "results/pilot/diagnostics_automated/connectivity_distroless/test_before.txt": "033d65d8ae31bfbb931528b66645519911d5f3b598e61b835fde17b396bf5aa0",
+    "results/pilot/diagnostics_automated/connectivity_distroless/test_after.txt": "9b163a57ee046906d1d8693809f167a8885eb1f5e455639026fe351b02c37b09",
+    "results/operator_diagnostics/operator_profile.json": "d7b57eb806c362c5eb65c2542c6945fd2ddefdbda0c3a14456ee4ef9aab2d9f4",
+    "results/operator_diagnostics/original_planned_operator_profile.json": "e06e8738669d4838af1a0916d869bb9caedddd2e4aec0ad7ef271795c6dcc54d",
+    "results/operator_diagnostics/session_status.json": "82fdfc946740e586e199f9703db39fe296153d2c59d5d532567d85b347e407b2",
+    "results/operator_diagnostics/trials/trial01/classification.json": "7c263cbbd9e15a4b05c828dd4ab6592ebb761c3173ac232724291e977f314cbf",
+    "analysis/audit.json": "2d7b796d4266045f1a3b6a3db7a13f52e52063cdb3ffd0f9075b0f1c363ade47"
+  },
+  "output_scope": "New descriptive reanalysis of archived evidence; no new experiments or fresh API tests."
+}

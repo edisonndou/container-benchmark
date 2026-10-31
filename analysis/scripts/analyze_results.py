@@ -37,9 +37,14 @@ def main():
     ap.add_argument('--archive', type=Path)
     args = ap.parse_args()
     root, out = args.project.resolve(), args.out.resolve()
+    if out.exists():
+        ap.error(f'Output path already exists; choose a new directory: {out}')
+    if out == root or out in root.parents:
+        ap.error('Output must not contain the project directory.')
     main_dir = root / 'results/main'
+    out.mkdir(parents=True, exist_ok=False)
     for sub in ('tables', 'figures'):
-        (out / sub).mkdir(parents=True, exist_ok=True)
+        (out / sub).mkdir()
     inputs, checks = {}, []
 
     def read(path):

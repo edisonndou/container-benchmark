@@ -72,4 +72,15 @@ Grafiket kane etiketa ne anglisht per t'u perdorur ne IEEE. Interpretimi eshte n
 `tables/ieee_tables.tex` eshte snippet, jo nje punim i plote dhe nuk eshte kompiluar si dokument IEEE.
 Raporti nuk pretendon prova te shfrytezueshmerise, shkak specifik per diferencat e performances,
 ose kohe/perpjekje te matura diagnostikimi. Deklaroni asistencen ChatGPT/Codex dhe verifikoni
-kontributet reale te secilit anetar para dorezimit. Literatura dhe propozimi mbeten per t'u finalizuar.
+kontributet reale te secilit anetar para dorezimit.
+
+## Statusi pas perfundimit
+
+Shenimet e raportit PDF dhe snapshot-it pershkruajne gjendjen ne kohen e
+gjenerimit; nuk jane nje liste aktuale detyrash. Perdoruesi ka konfirmuar
+perfundimin e dokumentacionit final dhe prezantimit. Keto materiale nuk u
+inspektuan ne kete kontroll te repos dhe raporti i analizes nuk i zevendeson.
+
+Matjet, figurat dhe raporti origjinal ruhen pa ndryshim per gjurmueshmeri.
+Statusi aktual i repos dhe kufizimet e riprodhimit gjenden te
+[docs/PROJECT_STATUS.md](../docs/PROJECT_STATUS.md).

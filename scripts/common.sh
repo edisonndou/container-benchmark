@@ -2,7 +2,7 @@
 # Shared configuration. Every script sources this file so all variants get identical settings.
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-RESULTS="$ROOT/results"
+RESULTS="$(realpath -m "${RESULTS_DIR:-$ROOT/results}")"
 NODE_VERSION="${NODE_VERSION:-22.22.0}"
 VARIANTS=(debian alpine distroless)          # main comparison
 ALL_VARIANTS=(debian alpine distroless distroless-debug)

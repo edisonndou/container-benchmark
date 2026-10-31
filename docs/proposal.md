@@ -1,5 +1,13 @@
 # Project Proposal and Method Outline
 
+> Historical proposal outline, retained for provenance. The prompts below are
+> planning notes, not the current completion checklist. The implemented method
+> and evidence are described in [PROJECT_STATUS.md](PROJECT_STATUS.md),
+> [operability_assessment.md](operability_assessment.md), and the
+> [analysis guide](../analysis/README.md). The user has confirmed that the final
+> documentation and presentation are complete; those deliverables were not
+> inspected during this repository closeout.
+
 **Title:** Security and Operability Trade-offs in Minimal Container Images: A Controlled Comparison of Debian Slim, Alpine and Distroless
 **Group:** Bleron Baftiu, Donart Ajvazi, Edison Ndou  
 **Domain:** Operating-system, container and platform security

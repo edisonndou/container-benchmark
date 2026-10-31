@@ -11,8 +11,12 @@ import collections
 import csv
 import json
 from pathlib import Path
+import sys
 
-ROOT = Path(__file__).resolve().parent.parent / "results"
+ROOT = (
+    Path(sys.argv[1]).resolve() if len(sys.argv) > 1
+    else Path(__file__).resolve().parent.parent / "results"
+)
 VARIANTS = ("debian", "alpine", "distroless")
 SCOPES = ("os", "project", "other_lang", "unknown_lang")
 SEVERITIES = ("UNKNOWN", "LOW", "MEDIUM", "HIGH", "CRITICAL")

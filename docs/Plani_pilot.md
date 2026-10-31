@@ -1,3 +1,5 @@
+> Historical planning document. For the completed scope, recorded evidence, current responsibilities, and limitations, see [PROJECT_STATUS.md](PROJECT_STATUS.md) and [CONTRIBUTIONS.md](../CONTRIBUTIONS.md). Original schedules and role suggestions below are retained for provenance.
+
 # Plani: implementimi dhe pilot evaluation (Middle of semester)
 
 **Faza e planit të seminarit:** *Middle of semester*. Rezultati i pritur: **prototip funksional, rezultate pilot dhe procedurë e rishikuar**.

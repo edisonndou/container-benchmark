@@ -90,6 +90,9 @@ with (ROOT / "load" / "runs.csv").open() as stream:
                 "non2xx": number(report["non2xx"]),
                 "timeouts": number(report["timeouts"]),
             }
+            requests_total = number(report["requests"]["total"])
+            responses_2xx = number(report["2xx"])
+            status_codes = report["statusCodeStats"]
         except (OSError, ValueError, KeyError, TypeError) as error:
             issues.append(f"load {identity}: invalid report: {error}")
             continue
@@ -97,6 +100,16 @@ with (ROOT / "load" / "runs.csv").open() as stream:
         counts[variant]["load_reports"] += 1
         for metric, value in metrics.items():
             data[variant][metric].append(value)
+
+        if (
+            requests_total == 0
+            or responses_2xx != requests_total
+            or not isinstance(status_codes, dict)
+            or set(status_codes) != {"200"}
+        ):
+            issues.append(
+                f"load {identity}: missing or unexpected successful HTTP responses"
+            )
 
         if any(metrics[k] for k in ("transport_errors", "non2xx", "timeouts")):
             issues.append(

@@ -1,0 +1,4 @@
+# Keep executable source portable between Windows checkouts and Linux runs.
+*.sh text eol=lf
+*.py text eol=lf
+*.mjs text eol=lf

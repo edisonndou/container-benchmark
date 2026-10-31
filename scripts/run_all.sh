@@ -28,6 +28,8 @@ mkdir -p "$OUTD/metadata" "$OUTD/security"
   echo "MEASUREMENT_SECONDS=$M"
   echo "STARTED_UTC=$(date -u +%FT%TZ)"
   echo "COMMIT=$(git -C "$ROOT" rev-parse HEAD)"
+  echo "RESULTS_DIR=$RESULTS"
+  echo "TRIVY_CACHE_DIR=$(realpath -m "${TRIVY_CACHE_DIR:-$ROOT/.cache/trivy}")"
 } > "$OUTD/metadata/run.txt"
 
 git -C "$ROOT" diff HEAD -- app docker scripts stub .gitignore \
@@ -72,6 +74,28 @@ bash "$ROOT/scripts/record_env.sh" > "$OUTD/environment.md"
 bash "$ROOT/scripts/startup.sh" "$R" "$OUTD/startup.csv"
 bash "$ROOT/scripts/load.sh" "$R" "$W" "$M" "$OUTD/load"
 python3 "$ROOT/scripts/analyze_perf.py" "$OUTD"
+
+python3 - "$OUTD/perf_quality.json" "$R" <<'PY'
+import json
+import sys
+
+with open(sys.argv[1]) as stream:
+    quality = json.load(stream)
+
+repetitions = int(sys.argv[2])
+expected = {
+    "startup_attempts": repetitions,
+    "startup_failed": 0,
+    "load_attempts": repetitions,
+    "load_reports": repetitions,
+}
+if (
+    quality["issues"]
+    or set(quality["counts"]) != {"debian", "alpine", "distroless"}
+    or any(counts != expected for counts in quality["counts"].values())
+):
+    raise SystemExit("STOP: performance quality checks failed; evidence retained for review.")
+PY
 
 date -u +%FT%TZ > "$OUTD/metadata/completed_utc.txt"
 echo "Pipeline finished. Review perf_quality.json before accepting results."

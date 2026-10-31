@@ -1,0 +1,36 @@
+{
+  "startup": {
+    "debian": [
+      1,
+      4,
+      5
+    ],
+    "alpine": [
+      5,
+      4,
+      1
+    ],
+    "distroless": [
+      4,
+      2,
+      4
+    ]
+  },
+  "load": {
+    "debian": [
+      7,
+      1,
+      2
+    ],
+    "alpine": [
+      1,
+      4,
+      5
+    ],
+    "distroless": [
+      2,
+      5,
+      3
+    ]
+  }
+}

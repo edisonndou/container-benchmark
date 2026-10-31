@@ -1,3 +1,5 @@
+> Historical planning document. For the completed scope, recorded evidence, current responsibilities, and limitations, see [PROJECT_STATUS.md](PROJECT_STATUS.md) and [CONTRIBUTIONS.md](../CONTRIBUTIONS.md). Original schedules and role suggestions below are retained for provenance.
+
 # Plani pas miratimit: 26 tetor – 1 nëntor 2026
 
 **Faza e planit të seminarit:** *After approval*. Rezultati i pritur: **projekti i propozimit dhe skica e metodës** (RQ, baseline, metrika, testbed, plan implementimi).
